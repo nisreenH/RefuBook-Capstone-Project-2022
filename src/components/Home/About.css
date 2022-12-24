@@ -1,0 +1,94 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text_section {
+  max-width: 65%;
+  margin: 3rem;
+}
+
+.text_section h1 {
+  font-size: 28px;
+}
+.text_section p {
+  font-size: 14px;
+  margin: 2rem 0;
+}
+.text_section button {
+  font-size: 18px;
+}
+
+.custom_button {
+  background-color: #4699c2 !important;
+}
+
+.container_style {
+  background-color: #eafbff;
+}
+
+.grid_contents {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+}
+/*  */
+.grid_items {
+  display: flex;
+  max-width: 50%;
+  flex-direction: column;
+}
+.grit_item_row2 {
+  margin-left: 6rem;
+}
+.grid_item_image {
+  width: 100%;
+}
+
+.grid_header {
+  display: flex;
+}
+.grid_header h1 {
+  font-size: 16px;
+  margin-left: 1rem;
+}
+.grid_item p {
+  font-size: 14px;
+  text-align: left;
+}
+
+.dots {
+  display: flex;
+  margin-top: 2rem;
+}
+.circle-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border-width: 3px;
+}
+.circle-dot-fill {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #026fc2;
+}
+
+/* ! dotss */
+/* .circle-dot {
+  background-color: red;
+  padding: 1rem;
+} */
+
+/* mobile size */
+@media (max-width: 600px) {
+  .text_section {
+    max-width: none;
+  }
+
+  .grid_contents {
+    flex-direction: column;
+  }
+}
