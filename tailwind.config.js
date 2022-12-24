@@ -8,6 +8,7 @@ module.exports = {
       sec: '#E5FAFF',
       lightRed: '#FD9E71',
     },
+
   },
    
   },
