@@ -83,12 +83,35 @@
 } */
 
 /* mobile size */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .text_section {
     max-width: none;
   }
 
   .grid_contents {
     flex-direction: column;
+  }
+  .grid_contents img {
+    width: 50%;
+  }
+  .grid_header {
+    flex-direction: column;
+  }
+  .grid_header h1 {
+    margin: 10px 0;
+    font-weight: 200;
+  }
+  .grid_header svg {
+    font-size: 2rem;
+  }
+  .grid_item p {
+    text-align: center;
+  }
+  .dsNone {
+    display: none;
+  }
+  .dots {
+    margin-bottom: 3rem;
+    margin-top: 2rem;
   }
 }

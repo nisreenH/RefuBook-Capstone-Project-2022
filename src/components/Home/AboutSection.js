@@ -41,7 +41,7 @@ const About = () => {
                     bello animadversionis.
                   </p>
                 </div>
-                <div className="grid_item">
+                <div className="grid_item dsNone">
                   <div className="grid_header">
                     <FontAwesomeIcon icon={faCircle} />
                     <h1>Reliability</h1>
@@ -53,7 +53,7 @@ const About = () => {
                   </p>
                 </div>
               </div>
-              <div className="grit_item_row2">
+              <div className="grit_item_row2 dsNone">
                 <div className="grid_item">
                   <div className="grid_header">
                     <FontAwesomeIcon icon={faCircle} />
