@@ -5,7 +5,7 @@ import { store } from './app/store';
 import App from './App';
 import './index.css';
 
-// Bootstrap CSS
+// // Bootstrap CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
 // Bootstrap Bundle JS
 import 'bootstrap/dist/js/bootstrap.bundle.min';
