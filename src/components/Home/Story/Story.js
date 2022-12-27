@@ -17,7 +17,7 @@ function Story(props){
             </div>
             <div className=" flex w-full relative p-16 flex-col gap-6">  
               <span className="font-bold my-7 bg-amber-200 text-prim text-xs p-2 rounded-md border-solid absolute -top-5 left-10" >{label}</span>
-              <p className="w-70 text-2xl">How I learned turkish quickly and what are the best places to learn.</p>
+              <p className="w-70 text-2xl">How I learn turkish quickly and what are the best places to learn.</p>
               <div className="flex gap-x-8">
                 <img className="rounded-full w-14 h-14" src={pic} alt="pic" /> 
                 <div className="text-left">
@@ -34,7 +34,7 @@ function Story(props){
             </div>
             <div className=" flex w-full relative p-16 flex-col gap-6">  
               <span className="font-bold my-7 bg-amber-200 text-prim text-xs p-2 rounded-md border-solid absolute -top-5 left-10" >{label}</span>
-              <p className="w-70 text-2xl">How I learned turkish quickly and what are the best places to learn.</p>
+              <p className="w-70 text-2xl">How I learn turkish quickly and what are the best places to learn.</p>
               <div className="flex gap-x-8">
                 <img className="rounded-full w-14 h-14" src={pic} alt="pic" /> 
                 <div className="text-left">
