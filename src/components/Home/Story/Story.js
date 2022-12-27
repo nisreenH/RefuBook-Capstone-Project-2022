@@ -2,7 +2,7 @@ import React from "react";
 import pic from "./image.jpg";
 
 function Story(props){
-  const {name,label} = props;
+  const {label} = props;
     return(
         <div className="bg-prim px-20">
 
