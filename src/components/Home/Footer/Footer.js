@@ -22,17 +22,17 @@ function Footer() {
 </svg>
 </div>
 <div>
-<a  className="text-l mx-5 font-medium text-prim py-2 px-2 hover:bg-whity hover:text-purple-700 hover:scale-105 rounded-md transition duration-150 ease-in-out" href="#Home">
+<a  className="text-l mx-5 no-underline font-medium text-prim py-2 px-2 hover:bg-whity hover:text-purple-700 hover:scale-105 rounded-md transition duration-150 ease-in-out" href="#Home">
     Home
 </a>
 
-<a  className="text-l mx-5 font-medium text-prim py-2 px-2 hover:bg-whity hover:text-purple-700 hover:scale-105 rounded-md transition duration-150 ease-in-out" href="#A">
+<a  className="text-l mx-5 no-underline font-medium text-prim py-2 px-2 hover:bg-whity hover:text-purple-700 hover:scale-105 rounded-md transition duration-150 ease-in-out" href="#A">
     About
 </a>
-<a  className="text-l mx-5 font-medium text-prim py-2 px-2 hover:bg-whity hover:text-purple-700 hover:scale-105 rounded-md transition duration-150 ease-in-out" href="#C">
+<a  className="text-l mx-5 no-underline font-medium text-prim py-2 px-2 hover:bg-whity hover:text-purple-700 hover:scale-105 rounded-md transition duration-150 ease-in-out" href="#C">
     Content
 </a>
-<a  className="text-l mx-5 font-medium text-prim py-2 px-2 hover:bg-whity hover:text-purple-700 hover:scale-105 rounded-md transition duration-150 ease-in-out" href="#B">
+<a  className="text-l mx-5 no-underline font-medium text-prim py-2 px-2 hover:bg-whity hover:text-purple-700 hover:scale-105 rounded-md transition duration-150 ease-in-out" href="#B">
     Blog
 </a>
 </div>
