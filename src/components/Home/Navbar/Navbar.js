@@ -1,4 +1,5 @@
 import { React, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
@@ -93,7 +94,9 @@ export default function Navbar() {
           >
             <ul className="text-lightgray flex flex-col p-4 mt-4 items-center justify-center  rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
               <li>
-                <p className="text-prim font-normal hover:font-bold">Home</p>
+                <Link to="/" className="text-prim font-normal hover:font-bold">
+                  Home
+                </Link>
               </li>
               <li>
                 <p className="font-normal hover:font-bold hover:text-gray-300">
@@ -111,9 +114,12 @@ export default function Navbar() {
                 </p>
               </li>
               <li>
-                <p className="bg-prim text-white py-1 px-3 rounded-full hover:bg-lightgray ">
+                <Link
+                  to="/signup"
+                  className="bg-prim text-white py-1 px-3 rounded-full hover:bg-lightgray "
+                >
                   Sign Up
-                </p>
+                </Link>
               </li>
             </ul>
           </div>

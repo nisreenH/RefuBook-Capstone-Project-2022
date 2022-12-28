@@ -1,17 +1,17 @@
 import React from 'react';
-import About from './components/Home/AboutSection';
-import Story from './components/Home/Story/Story';
 import Navbar from './components/Home/Navbar/Navbar';
-import Header from './components/Home/Header/Header';
+import HomeSection from './components/Home/Home/HomeSection';
+import Signup from './components/Signup/Signup';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <Header/>
-      <About />
-
-      <Story label="Language"/>
+      <Routes>
+        <Route exact path="/" element={<HomeSection />} />
+        <Route path="signup" element={<Signup />} />
+      </Routes>
     </div>
   );
 }
