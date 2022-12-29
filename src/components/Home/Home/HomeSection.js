@@ -10,6 +10,7 @@ export default function HomeSection() {
       <Header />
       <About />
       <Story />
+      <Footer />
     </>
   );
 }
