@@ -1,8 +1,18 @@
 import { React, useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import { UserAuth } from '../../../context/authContext';
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
+  const {user, logOut} = UserAuth();
+
+  const handleSignOut = async () => {
+    try{
+      await logOut();
+     } catch(error) {
+      console.log(error);
+     }
+  }
+
   return (
     <nav className="w-full bg-white px-28 mb-10">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
@@ -114,12 +124,14 @@ export default function Navbar() {
                 </p>
               </li>
               <li>
+                {user?.displayName ? <button onClick= {handleSignOut}>Sign Out</button> :  
                 <Link
                   to="/signup"
                   className="bg-prim text-white py-1 px-3 rounded-full hover:bg-lightgray "
                 >
                   Sign Up
-                </Link>
+                </Link>}
+               
               </li>
             </ul>
           </div>
