@@ -1,22 +1,7 @@
 import React from 'react';
 import Card from './SigninCard/Card';
 import { Link } from 'react-router-dom';
-// import {UserAuth} from '/home/nisreen/development/RefuBook-Capstone-Project-2022/src/context/authContext.js';
-
-// // const googleSignIn = UserAuth();
 export default function Signup() {
-
-//   const Signin = () => {
-//     const { googleSignIn, user } = UserAuth();
-//     const navigate = useNavigate();
-  
-//     const handleGoogleSignIn = async () => {
-//       try {
-//         await googleSignIn();
-//       } catch (error) {
-//         console.log(error);
-//       }
-//     };
 
   return (
     <div className="flex overflow-hidden relative items-center max-md:pt-20 max-md:pb-28 max-xl:pt-20 max-xl:pb-28 max-2xl:pt-20 max-2xl:pb-28 justify-center flex-col max-sm:pb-10">
