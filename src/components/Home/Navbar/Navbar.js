@@ -1,9 +1,16 @@
 import { React, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { UserAuth } from '../../../context/authContext';
+import { useTranslation } from 'react-i18next';
+
+
+
+
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
   const {user, logOut} = UserAuth();
+
+  const { t } = useTranslation();
 
   const handleSignOut = async () => {
     try{
@@ -105,7 +112,7 @@ export default function Navbar() {
             <ul className="text-lightgray flex flex-col p-4 mt-4 items-center justify-center  rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
               <li>
                 <Link to="/" className="text-prim font-normal hover:font-bold">
-                  Home
+                  {t('home')}
                 </Link>
               </li>
               <li>
