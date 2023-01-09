@@ -4,8 +4,31 @@ import React from "react"
 // import About from "./About";
 // import Home from "./Home";
 // import Content from './Content'
+// import 'flag-icon-css/css/flag-icon.min.css';
+import 'flag-icon-css/css/flag-icon.css';
+import 'flag-icon-css';
 
 function Footer() {
+
+    const languages = [
+        {
+          code: 'en',
+          name: 'English',
+          country_code: 'gb',
+        },
+        {
+          code: 'ar',
+          name: 'العربية',
+          dir: 'rtl',
+          country_code: 'sa',
+        },
+        {
+          code: 'ku',
+          name: 'Kurdish',
+          country_code: 'fr',
+        },
+      ]
+
   return (
   
     <footer className="grid flex-col-2 my-5 md:grid-cols-2 md:my-5 md:gap-x-12 grid-cols-1 gap-x-1">
@@ -54,9 +77,13 @@ function Footer() {
         sign up
     </button>
 <select className="bg-white border sm:h-12 h-12 border-prim  md:text-gray500 text-sm rounded-3xl focus:ring-blue-500 focus:border-blue-500 block w-64 p-2 px-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray500 dark:focus:ring-blue-500 dark:focus:border-blue-500">
-    <option value="en">English</option>
+   {languages.map(({code,name,country_code}) =>
+   
+   <option value={code}>{name}</option>
+   )}
+    {/* <option value="en">English</option>
     <option value="ar" >Arabic</option>
-    <option value="ku">Kurdish</option>
+    <option value="ku">Kurdish</option> */}
 
   </select>
     </form>

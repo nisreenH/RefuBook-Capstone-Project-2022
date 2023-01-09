@@ -2,7 +2,8 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import HttpApi from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
-
+import lang_en from "./locales/en.json";
+import lang_ar from "./locales/ar.json";
 // const resources = {
 //   en: {
 //     translation: {
@@ -15,6 +16,15 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 //     }
 //   }
 // };
+
+const resources = {
+  en: {
+    translation: lang_en,
+  },
+  ar: {
+    translation: lang_ar,
+  },
+};
 
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
@@ -29,13 +39,17 @@ i18n
     },
     //option for language detector
     detection: {
-        order: ['path', 'cookie', 'htmlTag'],
+        order: ['cookie' ,'path','htmlTag' ],
         caches: ['cookie'],
       },
      react: { useSuspense: false },
-    backend: {
-        loadPath: '/locales/{{lng}}.json',
-      },
+     resources
+    // backend: {
+    //   loadPath: '/locales/{{lng}}.json',
+
+    //     // loadPath: './locales/en.json',
+        
+    //   },
   });
 
   export default i18n;
