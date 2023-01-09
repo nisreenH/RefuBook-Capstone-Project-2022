@@ -114,9 +114,9 @@ export default function Navbar() {
                 </p>
               </li>
               <li>
-                <p className="font-normal hover:font-bold hover:text-gray-300">
+                <Link to='/blogs' className="font-normal hover:font-bold hover:text-gray-300">
                   Blog
-                </p>
+                </Link>
               </li>
               <li>
                 <p className="font-normal hover:font-bold hover:text-gray-300">
