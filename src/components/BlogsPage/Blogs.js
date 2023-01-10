@@ -3,11 +3,11 @@ import Carousel from 'react-elastic-carousel';
 import '../../index.css';
 import Card from './BlogCard/Card';
 
-export default function Testimonials() {
+export default function Blogs() {
   const blogs = [
     {
       id: 1,
-      title: 'Title',
+      title: 'learn',
       text: 'Lorem ipsum dolor sitadadLorem ipsum dolor sitadadLorem ipsum dolor sitdadaLorem ipsum dolor sitdad',
       user: 'Bruce Lee',
       userProfilePic:
