@@ -12,6 +12,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './App.css';
 import './i18n';
 
+
 const container = document.getElementById('root');
 const root = createRoot(container);
 

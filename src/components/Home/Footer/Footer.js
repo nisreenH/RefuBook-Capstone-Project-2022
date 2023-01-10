@@ -1,12 +1,24 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from "react"
+import React, {useEffect} from "react"
 // import { Routes , Route  } from "react-router-dom";
 // import About from "./About";
 // import Home from "./Home";
 // import Content from './Content'
+
 // import 'flag-icon-css/css/flag-icon.min.css';
-import 'flag-icon-css/css/flag-icon.css';
-import 'flag-icon-css';
+
+import Flags, {GB,SA} from 'country-flag-icons/react/3x2'
+import i18next from "i18next";
+import {useTranslation} from "react-i18next";
+
+  window.onload = function() {
+    var selectedOption= sessionStorage.getItem('selectedOption')
+    console.log(selectedOption)
+    const select = document.querySelector('#mySelect');
+    if(selectedOption){
+     select.value = selectedOption
+    } 
+  }
 
 function Footer() {
 
@@ -14,23 +26,34 @@ function Footer() {
         {
           code: 'en',
           name: 'English',
-          country_code: 'gb',
+          country_code: 'GB',
+          Flag : GB
         },
         {
           code: 'ar',
           name: 'العربية',
+          country_code: 'SA',
           dir: 'rtl',
-          country_code: 'sa',
-        },
-        {
-          code: 'ku',
-          name: 'Kurdish',
-          country_code: 'fr',
-        },
+          Flag : Flags.SA
+        }
+        // {
+        //   code: 'ku',
+        //   name: 'Kurdish',
+        //   country_code: 'ku',
+        // },
       ]
+    
+      function changeLang(code) { 
+        i18next.changeLanguage(code);
+       }
+
+       const {t} = useTranslation();
+      useEffect(() => {
+        document.title = t('home.hero.appTitle')
+       }, [t])
 
   return (
-  
+
     <footer className="grid flex-col-2 my-5 md:grid-cols-2 md:my-5 md:gap-x-12 grid-cols-1 gap-x-1">
       
         <div className="md:flex md:row md:justify-start md:mx-10 items-center grid-cols-1 gap-x-1">
@@ -46,17 +69,17 @@ function Footer() {
 </div>
 <div>
 <a  className="text-l mx-5 no-underline font-medium text-prim py-2 px-2 hover:bg-whity hover:text-purple-700 hover:scale-105 rounded-md transition duration-150 ease-in-out" href="#Home">
-    Home
+{t('navbar.home')}
 </a>
 
 <a  className="text-l mx-5 no-underline font-medium text-prim py-2 px-2 hover:bg-whity hover:text-purple-700 hover:scale-105 rounded-md transition duration-150 ease-in-out" href="#A">
-    About
+{t('navbar.about')}
 </a>
 <a  className="text-l mx-5 no-underline font-medium text-prim py-2 px-2 hover:bg-whity hover:text-purple-700 hover:scale-105 rounded-md transition duration-150 ease-in-out" href="#C">
-    Content
+{t('navbar.contact')}
 </a>
 <a  className="text-l mx-5 no-underline font-medium text-prim py-2 px-2 hover:bg-whity hover:text-purple-700 hover:scale-105 rounded-md transition duration-150 ease-in-out" href="#B">
-    Blog
+{t('navbar.blog')}
 </a>
 </div>
 
@@ -74,17 +97,25 @@ function Footer() {
        className="bg-prim  text-whity
        text-sm rounded-3xl h-12 w-64 p-2 mx-5
          ">
-        sign up
+         {t('navbar.signUp')}
     </button>
-<select className="bg-white border sm:h-12 h-12 border-prim  md:text-gray500 text-sm rounded-3xl focus:ring-blue-500 focus:border-blue-500 block w-64 p-2 px-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray500 dark:focus:ring-blue-500 dark:focus:border-blue-500">
-   {languages.map(({code,name,country_code}) =>
+<select
+id="mySelect"
+ className="bg-white border sm:h-12 h-12 border-prim  md:text-gray500 text-sm rounded-3xl focus:ring-blue-500 focus:border-blue-500 block w-64 p-2 px-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray500 dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+ onChange={(e) => {
+    sessionStorage.setItem('selectedOption', e.target.value)
+    return changeLang(e.target.value);
+ }}
+ >
+  {languages.map(({code,name,country_code,Flag}) =>
    
-   <option value={code}>{name}</option>
+   <option value={code} key={country_code} >
+    {/* <span className=" mx-2"> <Flag /> </span> */}
+   
+    <Flag className="mx-2"/>
+    {name}
+    </option>
    )}
-    {/* <option value="en">English</option>
-    <option value="ar" >Arabic</option>
-    <option value="ku">Kurdish</option> */}
-
   </select>
     </form>
 

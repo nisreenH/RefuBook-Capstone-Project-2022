@@ -4,8 +4,6 @@ import { UserAuth } from '../../../context/authContext';
 import { useTranslation } from 'react-i18next';
 
 
-
-
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
   const {user, logOut} = UserAuth();
@@ -59,7 +57,7 @@ export default function Navbar() {
                 />
               </svg>
               <span className="self-center text-xl font-semibold whitespace-nowrap text-prim">
-                RefuBook
+                {t('home.hero.appTitle')}
               </span>
             </p>
             <div className="md:hidden">
@@ -112,22 +110,22 @@ export default function Navbar() {
             <ul className="text-lightgray flex flex-col p-4 mt-4 items-center justify-center  rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
               <li>
                 <Link to="/" className="text-prim font-normal hover:font-bold">
-                  {t('home')}
+                  {t('navbar.home')}
                 </Link>
               </li>
               <li>
                 <p className="font-normal hover:font-bold hover:text-gray-300">
-                  About
+                {t('navbar.about')}
                 </p>
               </li>
               <li>
                 <p className="font-normal hover:font-bold hover:text-gray-300">
-                  Blog
+                {t('navbar.blog')}
                 </p>
               </li>
               <li>
                 <p className="font-normal hover:font-bold hover:text-gray-300">
-                  Contact
+                {t('navbar.contact')}
                 </p>
               </li>
               <li>
@@ -136,7 +134,7 @@ export default function Navbar() {
                   to="/signup"
                   className="bg-prim text-white py-1 px-3 rounded-full hover:bg-lightgray "
                 >
-                  Sign Up
+                   {t('navbar.signUp')}
                 </Link>}
                
               </li>
