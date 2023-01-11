@@ -118,8 +118,11 @@ export default function Navbar() {
                 </p>
               </li>
               <li>
-                <Link to='/blogs' className="font-normal hover:font-bold hover:text-gray-300">
-                {t('navbar.blog')}
+                <Link
+                  to="/blogs"
+                  className="font-normal hover:font-bold hover:text-gray-300"
+                >
+                  {t('navbar.blog')}
                 </Link>
               </li>
               <li>
