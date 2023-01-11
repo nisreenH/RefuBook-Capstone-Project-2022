@@ -4,7 +4,6 @@ import { signInWithPopup, FacebookAuthProvider } from 'firebase/auth';
 import { authentication } from '../../../firebase';
 
 export default function Facebook() {
-
   const signUpWithFacebook = () => {
     const provider = new FacebookAuthProvider();
     signInWithPopup(authentication, provider)

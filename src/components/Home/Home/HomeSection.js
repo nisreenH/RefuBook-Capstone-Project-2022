@@ -10,7 +10,7 @@ export default function HomeSection() {
     <>
       <Header />
       <About />
-      <Testimonials/>
+      <Testimonials />
       <Story />
       <Footer />
     </>

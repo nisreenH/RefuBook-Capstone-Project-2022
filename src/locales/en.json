@@ -1,0 +1,78 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "blog": "Blog",
+    "signUp": "Sign up",
+    "logOut": "logout"
+  },
+  "home": {
+    "hero": {
+      "appTitle": "Refubook",
+      "subtitle1": "Express",
+      "subtitle2": "Freely",
+      "content": "Share your stories and experiences, expand your ideas freely and read other's stories, all under one website.",
+      "button": "Sign Up"
+    },
+    "about-section": {
+      "title": "About",
+      "content": "Refubook is one of Columbia university projects, it aims to help refugees help each others by writing their experiences and ideas.",
+      "button": "Learn More"
+    },
+    "featuresTitle": {
+      "reliability": "Reliability",
+      "motivation": "Motivation",
+      "efficiency": "Efficiency",
+      "creativity": "Creativity",
+      "socialCommunication": "Social",
+      "valuableIdeas": "Valuable Ideas",
+      "experiences": "Experiences",
+      "friendlyCommunity": "Friends"
+    },
+    "featuresContent": {
+      "reliability": "Reliability in statistics and psychometrics is the overall consistency of a measure.",
+      "motivation": "DescriptionMotivation is the experience of desire or aversion.",
+      "efficiency": "DescriptionEfficiency is the amount of divisions ordered from a task.",
+      "creativity": "Creativity is a phenomenon whereby something new and somehow valuable",
+      "socialCommunication": "Social Communication refers to language that is used in social situations.",
+      "valuableIdeas": "Everyone is looking for valuable ideas. Those ideas that have the power",
+      "experiences": "DescriptionExperience is the process through which conscious organisms",
+      "friendlyCommunity": "Enables people from all conflict-affected countries to actively participate"
+    },
+
+    "testimonials": {
+      "first": {
+        "text": "Now more than ever, access to health for everyone should be within Refubook.",
+        "whoSay": "Dr. Louis Li",
+        "position": "Refu University"
+      },
+      "second": {
+        "text": "We hope that the Refubook social App is an impactful digital solution for the youth to access health care facilities",
+        "whoSay": "Jaime Mikosh",
+        "position": "Poject Manager"
+      },
+      "third": {
+        "text": "We hope that the Refubook social App is an impactful digital solution for the youth to access health care facilities",
+        "whoSay": "Jaime Mikosh",
+        "position": "Poject Manager"
+      },
+      "partners-title": "Our Partners"
+    },
+
+    "stories-section": {
+      "title": "Latest Stories",
+      "subtitle": "Home is behind, the world ahead and there are many paths to tread through shadows to the edge.",
+      "details": {
+        "language": "Language",
+        "language-article-title": "How I Learned Turkish Quickly, And What Are The Best Places To Learn From.",
+        "language-article-author": "Ahmad Faysal",
+        "language-article-state": "Refugee in Turkey",
+        "job": "Jobs",
+        "job-article-title": "How To Find a Job in Lebanon, and what are the obstacles in Lebanon.",
+        "job-article-author": "Rami Al-Khaldi",
+        "job-article-state": "Refugee in Lebanon"
+      }
+    }
+  }
+}

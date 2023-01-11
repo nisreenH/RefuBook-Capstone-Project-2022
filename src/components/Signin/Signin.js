@@ -2,7 +2,6 @@ import React from 'react';
 import Card from './SigninCard/Card';
 import { Link } from 'react-router-dom';
 export default function Signup() {
-
   return (
     <div className="flex overflow-hidden relative items-center max-md:pt-20 max-md:pb-28 max-xl:pt-20 max-xl:pb-28 max-2xl:pt-20 max-2xl:pb-28 justify-center flex-col max-sm:pb-10">
       <Card title="sign in with" />
