@@ -1,22 +1,22 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 export default function Header() {
-
   const { t } = useTranslation();
   return (
     <div className="px-6 py-12 md:px-12 bg-gray-50 text-gray-800 text-center lg:text-left">
       <div className="container mx-auto xl:px-32">
         <div className="grid lg:grid-cols-2 gap-12 flex items-center">
           <div className="mt-12 lg:mt-0 lg:text-left">
-            <h1 className="text-prim text-7xl font-black"> {t('home.hero.appTitle')}</h1>
+            <h1 className="text-prim text-7xl font-black">
+              {' '}
+              {t('home.hero.appTitle')}
+            </h1>
             <h3 className="text-lightRed text-6xl font-medium">
               {t('home.hero.subtitle1')} <br /> {t('home.hero.subtitle2')}
             </h3>
-            <p className="text-gray-500">
-               {t('home.hero.content')}
-            </p>
+            <p className="text-gray-500">{t('home.hero.content')}</p>
             <button className="bg-prim px-4 py-2 rounded-full text-white font-medium">
-            {t('home.hero.button')}
+              {t('home.hero.button')}
             </button>
           </div>
           <div className="mb-12 lg:mb-0">

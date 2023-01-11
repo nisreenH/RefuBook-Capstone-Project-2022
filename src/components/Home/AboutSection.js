@@ -6,7 +6,6 @@ import imageSrc from '../../assets/photoCopy.png';
 import { useTranslation } from 'react-i18next';
 
 const About = () => {
-
   const { t } = useTranslation();
 
   return (
@@ -14,9 +13,7 @@ const About = () => {
       <div className="main container">
         <div className="text_section">
           <h1>{t('home.about-section.title')}</h1>
-          <p>
-          {t('home.about-section.content')}
-          </p>
+          <p>{t('home.about-section.content')}</p>
           <button
             type="button"
             className="custom_button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
@@ -35,18 +32,14 @@ const About = () => {
                     <FontAwesomeIcon icon={faCircleDot} />
                     <h1>{t('home.featuresTitle.reliability')}</h1>
                   </div>
-                  <p>
-                  {t('home.featuresContent.reliability')}
-                  </p>
+                  <p>{t('home.featuresContent.reliability')}</p>
                 </div>
                 <div className="grid_item dsNone">
                   <div className="grid_header">
                     <FontAwesomeIcon icon={faCircle} />
                     <h1>{t('home.featuresTitle.motivation')}</h1>
                   </div>
-                  <p>
-                  {t('home.featuresContent.motivation')}
-                  </p>
+                  <p>{t('home.featuresContent.motivation')}</p>
                 </div>
               </div>
               <div className="grit_item_row2 dsNone">
@@ -55,18 +48,14 @@ const About = () => {
                     <FontAwesomeIcon icon={faCircle} />
                     <h1>{t('home.featuresTitle.efficiency')}</h1>
                   </div>
-                  <p>
-                  {t('home.featuresContent.efficiency')}
-                  </p>
+                  <p>{t('home.featuresContent.efficiency')}</p>
                 </div>
                 <div className="grid_item">
                   <div className="grid_header">
                     <FontAwesomeIcon icon={faCircle} />
                     <h1>{t('home.featuresTitle.creativity')}</h1>
                   </div>
-                  <p>
-                  {t('home.featuresContent.creativity')}
-                  </p>
+                  <p>{t('home.featuresContent.creativity')}</p>
                 </div>
               </div>
             </div>

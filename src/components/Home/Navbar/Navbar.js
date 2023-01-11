@@ -3,20 +3,19 @@ import { Link } from 'react-router-dom';
 import { UserAuth } from '../../../context/authContext';
 import { useTranslation } from 'react-i18next';
 
-
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
-  const {user, logOut} = UserAuth();
+  const { user, logOut } = UserAuth();
 
   const { t } = useTranslation();
 
   const handleSignOut = async () => {
-    try{
+    try {
       await logOut();
-     } catch(error) {
+    } catch (error) {
       console.log(error);
-     }
-  }
+    }
+  };
 
   return (
     <nav className="w-full bg-white px-28 mb-10">
@@ -115,28 +114,30 @@ export default function Navbar() {
               </li>
               <li>
                 <p className="font-normal hover:font-bold hover:text-gray-300">
-                {t('navbar.about')}
+                  {t('navbar.about')}
                 </p>
               </li>
               <li>
                 <p className="font-normal hover:font-bold hover:text-gray-300">
-                {t('navbar.blog')}
+                  {t('navbar.blog')}
                 </p>
               </li>
               <li>
                 <p className="font-normal hover:font-bold hover:text-gray-300">
-                {t('navbar.contact')}
+                  {t('navbar.contact')}
                 </p>
               </li>
               <li>
-                {user?.displayName ? <button onClick= {handleSignOut}>Sign Out</button> :  
-                <Link
-                  to="/signup"
-                  className="bg-prim text-white py-1 px-3 rounded-full hover:bg-lightgray "
-                >
-                   {t('navbar.signUp')}
-                </Link>}
-               
+                {user?.displayName ? (
+                  <button onClick={handleSignOut}>Sign Out</button>
+                ) : (
+                  <Link
+                    to="/signup"
+                    className="bg-prim text-white py-1 px-3 rounded-full hover:bg-lightgray "
+                  >
+                    {t('navbar.signUp')}
+                  </Link>
+                )}
               </li>
             </ul>
           </div>
