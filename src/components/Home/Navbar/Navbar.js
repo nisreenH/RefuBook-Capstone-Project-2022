@@ -126,6 +126,14 @@ export default function Navbar() {
                 </Link>
               </li>
               <li>
+                <Link
+                  to="/SingleBlog"
+                  className="font-normal hover:font-bold hover:text-gray-300"
+                >
+                  Single Blog
+                </Link>
+              </li>
+              <li>
                 <p className="font-normal hover:font-bold hover:text-gray-300">
                   {t('navbar.contact')}
                 </p>

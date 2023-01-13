@@ -14,6 +14,12 @@ module.exports = {
         whity: '#FFFFFF',
         lightgreen: '#70CDD6',
       },
+      // inset: {
+      //   // left: "52%" ,
+      //   right: '90% ',
+      //   // top:'40%' ,
+      //   // bottom: '33.33%'
+      // },
     },
   },
   plugins: [],
