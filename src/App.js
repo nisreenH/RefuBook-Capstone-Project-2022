@@ -6,6 +6,11 @@ import Signin from './components/Signin/Signin';
 import { Routes, Route } from 'react-router-dom';
 import { AuthContextProvider } from './context/authContext';
 import Blogs from './components/BlogsPage/Blogs';
+import UserProfile from './components/userProfile';
+
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -17,7 +22,9 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/blogs" element={<Blogs />} />
+          <Route path="/user-profile" element={<UserProfile />} />
         </Routes>
+        <Footer />
       </AuthContextProvider>
     </div>
   );

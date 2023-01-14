@@ -2,10 +2,15 @@ import React from 'react';
 
 export default function Card({ props }) {
   return (
-    <div class="carouselCard max-w-sm bg-white border shadow-md rounded-lg h-auto  ">
-      <div>
-        <img class="rounded-t-lg w-full" src={`${props.blogPic}`} alt="" />
-      </div>
+    <div class="carouselCard max-w-sm bg-white border rounded-lg h-auto shadow-sm   ">
+      {props.blogPic ? (
+        <div>
+          <img class="rounded-t-lg w-full" src={`${props.blogPic}`} alt="" />
+        </div>
+      ) : (
+        ''
+      )}
+
       <div class="p-4">
         <div>
           <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
