@@ -1,25 +1,18 @@
 import { React, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { UserAuth } from '../../../context/authContext';
 import { useTranslation } from 'react-i18next';
+import Avatar from '../../Avatar';
+import { UserAuth } from '../../../context/authContext';
 
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
-  const { user, logOut } = UserAuth();
+  const { user } = UserAuth();
 
   const { t } = useTranslation();
 
-  const handleSignOut = async () => {
-    try {
-      await logOut();
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   return (
-    <nav className="w-full bg-white px-28 mb-10">
-      <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+    <nav className="w-full   bg-white-500 bg-opacity-0 ">
+      <div className="justify-between   mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between md:py-5 md:block">
             <p className="flex items-center gap-3">
@@ -113,9 +106,9 @@ export default function Navbar() {
                 </Link>
               </li>
               <li>
-                <p className="font-normal hover:font-bold hover:text-gray-300">
+                <Link className="font-normal hover:font-bold hover:text-gray-300">
                   {t('navbar.about')}
-                </p>
+                </Link>
               </li>
               <li>
                 <Link
@@ -135,16 +128,19 @@ export default function Navbar() {
                 {/* <p className="font-normal hover:font-bold hover:text-gray-300">
                   {t('navbar.contact')}
           </p>*/}
+                <Link className="font-normal hover:font-bold hover:text-gray-300">
+                  {t('navbar.contact')}
+                </Link>
               </li>
-              <li>
+              <li className="flex flex-col items-center ">
                 {user?.displayName ? (
-                  <button onClick={handleSignOut}>Sign Out</button>
+                  <Avatar width={'4rem'} height={'4rem'} margin={'0'} />
                 ) : (
                   <Link
                     to="/signup"
                     className="bg-prim text-white py-1 px-3 rounded-full hover:bg-lightgray "
                   >
-                    {t('navbar.signUp')}
+                    Sign Up
                   </Link>
                 )}
               </li>

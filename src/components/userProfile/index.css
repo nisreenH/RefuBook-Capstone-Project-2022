@@ -1,0 +1,22 @@
+body {
+  background-image: url('../../assets/niw_cercle.png');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.slick-slider {
+  /* background-color: red; */
+  max-width: 90%;
+}
+.slick-prev {
+  background-color: red !important;
+}
+
+.slick-next {
+  background-color: rgb(0, 221, 255) !important;
+}
+
+.carouselCard {
+  margin: 2rem 2rem;
+}
