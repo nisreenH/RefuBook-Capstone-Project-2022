@@ -128,9 +128,9 @@ export default function Navbar() {
                 {/* <p className="font-normal hover:font-bold hover:text-gray-300">
                   {t('navbar.contact')}
           </p>*/}
-                <Link className="font-normal hover:font-bold hover:text-gray-300">
+                {/* <Link className="font-normal hover:font-bold hover:text-gray-300">
                   {t('navbar.contact')}
-                </Link>
+                </Link> */}
               </li>
               <li className="flex flex-col items-center ">
                 {user?.displayName ? (
