@@ -1,5 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useEffect } from 'react';
+import { UserAuth } from '../../context/authContext';
+import { Link } from 'react-router-dom';
 // import { Routes , Route  } from "react-router-dom";
 // import About from "./About";
 // import Home from "./Home";
@@ -11,11 +13,16 @@ import Flags, { GB } from 'country-flag-icons/react/3x2';
 import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
 
+function changeLang(code) {
+  i18next.changeLanguage(code);
+}
+
 window.onload = function () {
   var selectedOption = sessionStorage.getItem('selectedOption');
   console.log(selectedOption);
   const select = document.querySelector('#mySelect');
   if (selectedOption) {
+    changeLang(selectedOption);
     select.value = selectedOption;
   }
 };
@@ -41,12 +48,18 @@ function Footer() {
     //   country_code: 'ku',
     // },
   ];
+  const { user, logOut } = UserAuth();
 
-  function changeLang(code) {
-    i18next.changeLanguage(code);
-  }
-
+  const handleSignOut = async () => {
+    try {
+      await logOut();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+ 
   const { t } = useTranslation();
+
   useEffect(() => {
     document.title = t('home.hero.appTitle');
   }, [t]);
@@ -126,14 +139,28 @@ function Footer() {
       </div>
 
       <form className="flex flex-row my-5 md:my-5 ">
-        <button
-          type="button"
-          className="bg-prim  text-whity
-       text-sm rounded-3xl h-12 w-64 p-2 mx-5
-         "
-        >
-          {t('navbar.signUp')}
-        </button>
+      
+        {user?.displayName ? (
+          <button
+            type="button"
+            className="bg-prim  text-whity
+               text-sm rounded-3xl h-12 w-64 p-2 mx-5"
+            onClick={handleSignOut}
+          >
+            {t('navbar.logOut')}
+          </button>
+        ) : (
+          <Link to="/signup">
+            <button
+              type="button"
+              className="bg-prim  text-whity
+                text-sm rounded-3xl h-12 w-64 p-2 mx-5"
+            >
+              {t('navbar.signUp')}
+            </button>
+          </Link>
+        )}
+
         <select
           id="mySelect"
           className="bg-white border sm:h-12 h-12 border-prim  md:text-gray500 text-sm rounded-3xl focus:ring-blue-500 focus:border-blue-500 block w-64 p-2 px-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray500 dark:focus:ring-blue-500 dark:focus:border-blue-500"

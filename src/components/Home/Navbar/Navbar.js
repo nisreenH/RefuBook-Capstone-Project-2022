@@ -127,9 +127,9 @@ export default function Navbar() {
                 </Link>
               </li>
               <li>
-                <Link 
-                to="/Contact"
-                className="font-normal hover:font-bold hover:text-gray-300"
+                <Link
+                  to="/Contact"
+                  className="font-normal hover:font-bold hover:text-gray-300"
                 >
                   {t('navbar.contact')}
                 </Link>
@@ -142,7 +142,7 @@ export default function Navbar() {
                     to="/signup"
                     className="bg-prim text-white py-1 px-3 rounded-full hover:bg-lightgray "
                   >
-                    Sign Up
+                    {t('navbar.signUp')}
                   </Link>
                 )}
               </li>
