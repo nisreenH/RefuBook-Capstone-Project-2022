@@ -7,6 +7,14 @@
     "signUp": "Sign up",
     "logOut": "Sign Out"
   },
+  "contact": {
+    "contactTitle": "Get in Touch",
+    "contactContent": "But Brooke Chaffin and Catherine Connors are looking to change that with the introduction.",
+    "message": "Message",
+    "email": "Email",
+    "send": "Send",
+    "messageContent": "message..."
+  },
   "home": {
     "hero": {
       "appTitle": "Refubook",
