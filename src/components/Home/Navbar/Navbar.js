@@ -126,9 +126,15 @@ export default function Navbar() {
                 </Link>
               </li>
               <li>
-                <p className="font-normal hover:font-bold hover:text-gray-300">
+                <Link
+                  to="/Contact"
+                  className="font-normal hover:font-bold hover:text-gray-300"
+                >
                   {t('navbar.contact')}
-                </p>
+                </Link>
+                {/* <p className="font-normal hover:font-bold hover:text-gray-300">
+                  {t('navbar.contact')}
+          </p>*/}
               </li>
               <li>
                 {user?.displayName ? (
