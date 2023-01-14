@@ -4,24 +4,24 @@ import SingleBlogCard from './BlogCard/SingleBlogCard';
 
 function Card() {
   return (
-    <div class="carouselCard max-w-sm bg-white border shadow-md rounded-lg h-auto  ">
+    <div className="carouselCard max-w-sm bg-white border shadow-md rounded-lg h-auto  ">
       <div>
         <img
           src="https://img.business.com/w/700/aHR0cHM6Ly9pbWFnZXMuYnVzaW5lc3NuZXdzZGFpbHkuY29tL2FwcC91cGxvYWRzLzIwMjIvMDQvMDQwNzQ1NTMvMTU1NDI0NDAxMC5qcGVn"
           alt=""
         />
       </div>
-      <div class="p-4">
+      <div className="p-4">
         <div>
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
+          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
             Title
           </h5>
         </div>
-        <p class="mb-3 font-normal text-gray-700">
+        <p className="mb-3 font-normal text-gray-700">
           subTitle subTitle subTitle subTitle subTitle subTitlesubTitlesubTitle
           subTitle subTitle subTitle subTitle subTitlesubTitle
         </p>
-        <div class="inline-flex gap-6 items-center px-3 py-2 text-sm font-medium  w-full ">
+        <div className="inline-flex gap-6 items-center px-3 py-2 text-sm font-medium  w-full ">
           <div className="rounded-full h-16 w-16 overflow-hidden">
             <img
               src="https://img.business.com/w/700/aHR0cHM6Ly9pbWFnZXMuYnVzaW5lc3NuZXdzZGFpbHkuY29tL2FwcC91cGxvYWRzLzIwMjIvMDQvMDQwNzQ1NTMvMTU1NDI0NDAxMC5qcGVn"
@@ -42,9 +42,9 @@ export default function SingleBlog() {
         <SingleBlogCard />
       </div>
 
-      <div className="gap-y-5">
+      <div className="gap-y-5 ml-10">
         <p className="text-left">Read also: </p>
-        <div className="flex md:flex-col gap-y-5 mr-20">
+        <div className="flex md:flex-col gap-y-5 mr-20 ">
           <Card />
           <Card />
         </div>

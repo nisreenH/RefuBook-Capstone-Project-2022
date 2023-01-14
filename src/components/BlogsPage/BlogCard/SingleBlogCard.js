@@ -7,9 +7,8 @@ export default function SingleBlogCard() {
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
           Title Title Title Title Title Title Title
         </h5>
-
-        {/* <div className='text-blue-600 absolute top-10 right-0 z-10'> */}
-        <div className="text-blue-600 flex flex-col pt-8 pr-2 gap-1 absolute">
+        {/* <div className='relative'> */}
+        <div className=" flex flex-col pt-8 pr-2 gap-2 absolute">
           <a href="socialMediaLink">
             <svg
               width="24"
@@ -26,7 +25,7 @@ export default function SingleBlogCard() {
               />
             </svg>
           </a>
-          <a href="socialMediaLink">
+          <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
             <svg
               width="29"
               height="29"
@@ -42,7 +41,7 @@ export default function SingleBlogCard() {
               />
             </svg>
           </a>
-          <a href="socialMediaLink">
+          <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
             <svg
               width="12"
               height="26"
@@ -57,7 +56,7 @@ export default function SingleBlogCard() {
             </svg>
           </a>
 
-          <a href="socialMediaLink">
+          <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
             <svg
               width="28"
               height="28"
@@ -79,6 +78,7 @@ export default function SingleBlogCard() {
           src="https://img.business.com/w/700/aHR0cHM6Ly9pbWFnZXMuYnVzaW5lc3NuZXdzZGFpbHkuY29tL2FwcC91cGxvYWRzLzIwMjIvMDQvMDQwNzQ1NTMvMTU1NDI0NDAxMC5qcGVn"
           alt=""
         />
+        {/* </div> */}
       </div>
       <div className="inline-flex mt-4 gap-6 items-center justify-center px-3 py-2 text-sm font-medium  w-full ">
         by:

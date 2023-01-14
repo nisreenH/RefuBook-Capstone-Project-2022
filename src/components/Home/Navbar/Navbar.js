@@ -140,7 +140,7 @@ export default function Navbar() {
               </li>
               <li>
                 {user?.displayName ? (
-                  <button onClick={handleSignOut}>Sign Out</button>
+                  <button onClick={handleSignOut}>{t('navbar.logOut')}</button>
                 ) : (
                   <Link
                     to="/signup"
