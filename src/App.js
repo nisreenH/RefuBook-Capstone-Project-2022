@@ -6,6 +6,7 @@ import Signin from './components/Signin/Signin';
 import { Routes, Route } from 'react-router-dom';
 import { AuthContextProvider } from './context/authContext';
 import Blogs from './components/BlogsPage/Blogs';
+import Contact from './components/ContactPage/Contact';
 import UserProfile from './components/userProfile';
 
 import 'slick-carousel/slick/slick.css';
@@ -22,6 +23,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/blogs" element={<Blogs />} />
+          <Route path="/Contact" element={<Contact />} />
           <Route path="/user-profile" element={<UserProfile />} />
         </Routes>
         <Footer />
