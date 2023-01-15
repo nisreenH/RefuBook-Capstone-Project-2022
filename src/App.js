@@ -6,6 +6,7 @@ import Signin from './components/Signin/Signin';
 import { Routes, Route } from 'react-router-dom';
 import { AuthContextProvider } from './context/authContext';
 import Blogs from './components/BlogsPage/Blogs';
+import SingleBlog from './components/BlogsPage/SingleBlog';
 import Contact from './components/ContactPage/Contact';
 import UserProfile from './components/userProfile';
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/blogs" element={<Blogs />} />
+          <Route path="/SingleBlog" element={<SingleBlog />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/user-profile" element={<UserProfile />} />
         </Routes>

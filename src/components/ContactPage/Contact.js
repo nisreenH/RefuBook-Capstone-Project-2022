@@ -47,7 +47,7 @@ const Contact = () => {
             <p className="text-left text-blue-600/50">{t('contact.message')}</p>
           </label>
           <textarea
-            placeholder={t('contact.messageContents')}
+            placeholder={t('contact.messageContent')}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             required={true}

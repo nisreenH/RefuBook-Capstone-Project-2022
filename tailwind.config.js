@@ -14,6 +14,18 @@ module.exports = {
         whity: '#FFFFFF',
         lightgreen: '#70CDD6',
       },
+      // insetCostumize: {
+      //   topCostumize: '208px',
+      //   rightCostumize: '208px',
+      //   bottomCostumize: '208px',
+      //   leftCostumize: '208px',
+      // },
+      // insetCostumize1: {
+      //   top: '208px',
+      //   right: '208px',
+      //   bottom: '208px',
+      //   left: '208px',
+      // },
     },
   },
   plugins: [],
