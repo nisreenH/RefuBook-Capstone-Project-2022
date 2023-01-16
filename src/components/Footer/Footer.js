@@ -57,7 +57,7 @@ function Footer() {
       console.log(error);
     }
   };
- 
+
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -139,7 +139,6 @@ function Footer() {
       </div>
 
       <form className="flex flex-row my-5 md:my-5 ">
-      
         {user?.displayName ? (
           <button
             type="button"
