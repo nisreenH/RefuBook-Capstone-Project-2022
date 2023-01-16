@@ -6,6 +6,7 @@ import Signin from './components/Signin/Signin';
 import { Routes, Route } from 'react-router-dom';
 import { AuthContextProvider } from './context/authContext';
 import Blogs from './components/BlogsPage/Blogs';
+import About from './components/about/About';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route exact path="/" element={<HomeSection />} />
+          <Route path="/about" element={<About />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/blogs" element={<Blogs />} />

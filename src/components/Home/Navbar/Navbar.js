@@ -108,25 +108,28 @@ export default function Navbar() {
           >
             <ul className="text-lightgray flex flex-col p-4 mt-4 items-center justify-center  rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
               <li>
-                <Link to="/" className="text-prim font-normal hover:font-bold">
+                <Link to="/" className="text-prim no-underline font-normal hover:font-bold">
                   {t('navbar.home')}
                 </Link>
               </li>
               <li>
-                <p className="font-normal hover:font-bold hover:text-gray-300">
+                <Link
+                  to="/about"
+                  className="text-prim font-normal hover:font-bold no-underline hover:text-gray-300"
+                >
                   {t('navbar.about')}
-                </p>
+                </Link>
               </li>
               <li>
                 <Link
                   to="/blogs"
-                  className="font-normal hover:font-bold hover:text-gray-300"
+                  className="text-prim font-normal hover:font-bold no-underline hover:text-gray-300"
                 >
                   {t('navbar.blog')}
                 </Link>
               </li>
               <li>
-                <p className="font-normal hover:font-bold hover:text-gray-300">
+                <p className="text-prim font-normal hover:font-bold no-underline hover:text-gray-300">
                   {t('navbar.contact')}
                 </p>
               </li>
@@ -136,7 +139,7 @@ export default function Navbar() {
                 ) : (
                   <Link
                     to="/signup"
-                    className="bg-prim text-white py-1 px-3 rounded-full hover:bg-lightgray "
+                    className="bg-prim text-white py-1 px-3 no-underline rounded-full hover:bg-lightgray "
                   >
                     {t('navbar.signUp')}
                   </Link>
