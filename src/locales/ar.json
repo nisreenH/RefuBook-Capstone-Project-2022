@@ -48,9 +48,9 @@
         "partners-title": "الشركاء"
       },
       "first": {
-        "text": "الآن أكثر من أي وقت مضى، يجب أن يكون الوصول إلى الصحة متاحاً للجميع في إطار ريفيو بوك.",
-        "whoSay": "د. لويس بن لي",
-        "position": "جامعة ريفيو"
+        "text": "سطرين من شهادة قصيرة من شخص ما يريد أن يقول شيئًا ، ويمكن أن يقول المزيد لشرح ذلك.",
+        "whoSay": " لويس بن لي",
+        "position": "مدرب في ريكودد"
       },
       "second": {
         "text": "نأمل أن يكون تطبيق ريفيو بوك حلاً رقميًا مؤثرًا للشباب لمشاركة الخبرات والحصول على المساعدة",
@@ -84,7 +84,7 @@
     "title": "عن المشروع",
     "discreption": "صفحة عن المشروع",
     "section-title": "حول المشروع",
-    "section-content": "هي مبادرة إقليمية لمركز التنمية المستدامة في جامعة كولومبيا والتي تهدف إلى سد الفجوة في محو الأمية الصحية والوصول إلى الرعاية الصحية بين اللاجئين والشباب المحليين الذين يعيشون في تركيا ولبنان ، ويتم تنفيذها بالشراكة مع مركز كولومبيا العالمي في اسطنبول وكذلك الجامعات والمنظمات غير الحكومية التي تدعم مبادرات صحة اللاجئين والشباب في تركيا ولبنان.",
+    "section-content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "team": {
       "heading": "فريق العمل",
       "countries": ["عرض الجميع", "فريق الدعم", "العراق", "لبنان"],
