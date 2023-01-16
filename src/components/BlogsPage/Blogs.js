@@ -3,7 +3,7 @@ import Carousel from 'react-elastic-carousel';
 import '../../index.css';
 import Card from '../Card';
 import data from '../../utils/data';
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import BlogsForm from './BlogsForm';
 import { UserAuth } from '../../context/authContext';
 import { useNavigate } from 'react-router-dom';
