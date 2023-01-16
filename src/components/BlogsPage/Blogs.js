@@ -3,7 +3,18 @@ import Carousel from 'react-elastic-carousel';
 import '../../index.css';
 import Card from '../Card';
 import data from '../../utils/data';
+import { useState, useEffect } from 'react';
+import BlogsForm from './BlogsForm';
+import { UserAuth } from '../../context/authContext';
+import { useNavigate } from 'react-router-dom';
+
 export default function Blogs() {
+  const navigate = useNavigate();
+
+  function handleRedirection() {
+    navigate('/signup');
+  }
+  const { user } = UserAuth();
   const blogs = data[0].blogs;
   const breakPoints = [
     { width: 1, itemsToShow: 1 },
@@ -11,11 +22,12 @@ export default function Blogs() {
     { width: 760, itemsToShow: 3 },
     { width: 1200, itemsToShow: 4 },
   ];
+  const [showModal, setShowModal] = React.useState(false);
 
   return (
     <div
       className=" w-auto px-6
-    md:px-12"
+    md:px-12 relative"
     >
       <Carousel
         showArrows={false}
@@ -28,6 +40,16 @@ export default function Blogs() {
           return <Card props={ele} key={ele.id} />;
         })}
       </Carousel>
+      <button
+        className="bg-sec text-prim active:bg-prim border-2 border-prim uppercase font-bold  text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+        type="button"
+        onClick={() => {
+          !user ? handleRedirection() : setShowModal(true);
+        }}
+      >
+        create your blog
+      </button>
+      <BlogsForm trigger={showModal} setTrigger={setShowModal} />
       <div className="mb-10 text-left md:px-16 grid grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 gap-4 content-center">
         {blogs.map((ele, index) => {
           return <Card props={ele} key={index} />;
