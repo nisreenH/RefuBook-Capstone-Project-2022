@@ -8,10 +8,10 @@ const About = () => {
   return (
     <>
       <AboutPageCover />
-      <AboutUs /> 
-       <TeamSection /> 
-       <Testimonials/>
-       <AboutPageCTA />
+      <AboutUs />
+      <TeamSection />
+      <Testimonials />
+      <AboutPageCTA />
     </>
   );
 };

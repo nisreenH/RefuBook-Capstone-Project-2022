@@ -42,8 +42,8 @@
     },
 
     "testimonials": {
-      "global-texts":{
-        "testimonial-title":"Testimonial",
+      "global-texts": {
+        "testimonial-title": "Testimonial",
         "partners-title": "Our Partners"
       },
       "first": {
@@ -90,7 +90,7 @@
           "name": "Ammar Sammour",
           "title": "Senior Trainer, Istanbul"
         },
-       
+
         {
           "name": "Wisam Naji",
           "title": "Lead Trainer"
@@ -110,13 +110,16 @@
         {
           "name": "Nisreen Hamzah",
           "title": " team Member"
-        }, {
+        },
+        {
           "name": "Ali majed",
           "title": " team Member"
-        }, {
+        },
+        {
           "name": "Mahnaz Nazeer",
           "title": " team Member"
-        }, {
+        },
+        {
           "name": "Yahia Hasan Baiz",
           "title": " team Member"
         }
@@ -130,7 +133,7 @@
           "name": "Ammar Sammour",
           "title": "Senior Trainer, Istanbul"
         },
-       
+
         {
           "name": "Wisam Naji",
           "title": "Lead Trainer"
