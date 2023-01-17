@@ -113,7 +113,7 @@ function Footer() {
 
             <a
               className="text-l mx-5 no-underline font-medium text-prim py-2 px-2 hover:bg-whity hover:text-purple-700 hover:scale-105 rounded-md transition duration-150 ease-in-out"
-              href="#A"
+              href="/about"
             >
               {t('navbar.about')}
             </a>
@@ -131,11 +131,6 @@ function Footer() {
             </a>
           </div>
         </div>
-        {/* <Routes>
-    <Route path="/Home" element={<Home/>} />
-    <Route path="/About" element={<About/>} />
-    <Route path="/Content" element={<Content/>} />
-    </Routes>  */}
       </div>
 
       <form className="flex flex-row my-5 md:my-5 ">
