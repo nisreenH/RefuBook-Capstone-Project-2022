@@ -106,7 +106,10 @@ export default function Navbar() {
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="font-normal hover:font-bold hover:text-gray-300">
+                <Link
+                  to="/about"
+                  className="font-normal hover:font-bold hover:text-gray-300"
+                >
                   {t('navbar.about')}
                 </Link>
               </li>

@@ -77,8 +77,8 @@ export const ourPartnersInfo = [
 export const testimonialsInfo = [
   <div>
     <h3 className="text-gray-600 pt-2">
-      Two lines of a short testimonial from someone want to say something, and can
-      say more to explain.
+      Two lines of a short testimonial from someone want to say something, and
+      can say more to explain.
     </h3>
     <p className="text-gray-600 pt-2">
       Louis Li,<br></br> Trainer at Recoded
@@ -86,8 +86,8 @@ export const testimonialsInfo = [
   </div>,
   <div>
     <h3 className="">
-      Two lines of a short testimonial from someone want to say something, and can
-      say more to explain.
+      Two lines of a short testimonial from someone want to say something, and
+      can say more to explain.
     </h3>
     <p className="text-gray-600 pt-2">
       Louis Li,<br></br> Trainer at Recoded
@@ -95,8 +95,8 @@ export const testimonialsInfo = [
   </div>,
   <div>
     <h3 className="text-gray-600 pt-2">
-      Two lines of a short testimonial from someone want to say something, and can
-      say more to explain.
+      Two lines of a short testimonial from someone want to say something, and
+      can say more to explain.
     </h3>
     <p className="text-gray-600 pt-2">
       Louis Li,<br></br> Trainer at Recoded
