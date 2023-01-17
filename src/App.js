@@ -15,6 +15,10 @@ import 'slick-carousel/slick/slick-theme.css';
 import Footer from './components/Footer/Footer';
 
 function App() {
+  // useEffect(() => (user ? handleUser(user) : console.log('error')));
+  // if (user) {
+  //   handleUserCreating(user);
+  // }
   return (
     <div className="App">
       <AuthContextProvider>

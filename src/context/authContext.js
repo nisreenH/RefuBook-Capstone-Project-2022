@@ -9,6 +9,7 @@ import {
 import { auth } from '../firebase';
 import { doc, setDoc } from 'firebase/firestore';
 import { db } from '../firebase';
+import { useCallback } from 'react';
 
 const AuthContext = createContext();
 
@@ -25,25 +26,27 @@ export const AuthContextProvider = ({ children }) => {
     signOut(auth);
   };
 
-  const handleUserCreating = async (...user) => {
-    console.log(user[0].uid);
-    await setDoc(doc(db, 'users', user[0].uid), {
-      name: user.displayName,
-      state: 'CA',
-      country: 'USA',
+  async function handleUser() {
+    // Add a new document in collection "users"
+    await setDoc(doc(db, 'users', user.uid), {
+      userId: user.uid,
+      userName: user.displayName,
+      email: user.email,
+      profilePic: user.photoURL,
     });
-  };
+  }
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      handleUserCreating(currentUser);
       console.log('User', currentUser);
     });
     return () => {
       unsubscribe();
     };
   }, []);
-
+  useEffect(() => {
+    user ? handleUser() : console.log('user', user);
+  }, [user]);
   return (
     <AuthContext.Provider value={{ googleSignIn, logOut, user }}>
       {children}
