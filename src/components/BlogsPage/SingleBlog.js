@@ -85,7 +85,7 @@ export default function SingleBlog() {
   if (randomKey1 === randomKey2) {
     randomIndex2 = Math.floor(Math.random() * keys.length);
     randomKey2 = keys[randomIndex2];
-  };
+  }
 
   return (
     <div className="md:flex justify-center gap-x-4">
@@ -98,7 +98,6 @@ export default function SingleBlog() {
       <div className="gap-y-5 ml-10">
         <p className="text-left">Read also: </p>
         <div className="flex md:flex-col gap-y-5 mr-20 ">
-
           {blogs && keys.length > 0 ? (
             <React.Fragment>
               <Card props={blogs[randomKey1]} blogId={randomKey1} />

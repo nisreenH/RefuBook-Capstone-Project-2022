@@ -1,17 +1,16 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { db } from '../../firebase';
 import { useNavigate } from 'react-router-dom';
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs } from 'firebase/firestore';
 // import { query , where } from "firebase/firestore";
 
 export default function Card({ props, blogId }) {
-
-   const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [users, setUsers] = useState({});
   useEffect(() => {
     async function fetchUsers() {
-      const querySnapshot = await getDocs(collection(db, "users"));
+      const querySnapshot = await getDocs(collection(db, 'users'));
       querySnapshot.forEach((doc) => {
         setUsers((prevState) => ({
           ...prevState,
@@ -27,10 +26,15 @@ export default function Card({ props, blogId }) {
     navigate(`/SingleBlog/${blogId}`);
   }
   return (
-    <div class="carouselCard max-w-sm bg-white border rounded-lg h-auto shadow-sm   " >
+    <div class="carouselCard max-w-sm bg-white border rounded-lg h-auto shadow-sm   ">
       {props.blogImgUrl ? (
         <div>
-          <img class="rounded-t-lg w-full" src={`${props.blogImgUrl}`} alt="" onClick={() => handleRedirection(blogId)}/>
+          <img
+            class="rounded-t-lg w-full"
+            src={`${props.blogImgUrl}`}
+            alt=""
+            onClick={() => handleRedirection(blogId)}
+          />
         </div>
       ) : (
         ''
@@ -44,17 +48,19 @@ export default function Card({ props, blogId }) {
         </div>
         <p class="mb-3 font-normal text-gray-700">{props.subTitle}</p>
         <div class="inline-flex gap-6 items-center px-3 py-2 text-sm font-medium  w-full ">
-          
-          {Object.keys(users).map((key) => (
-            key === props.userId ?
-            <React.Fragment>
-            <div className="rounded-full h-16 w-16 overflow-hidden">
-             <img src={`${users[key].profilePic}`} alt={`${users[key].userName}`} /> 
-            </div>
-             <p className="m-0">{users[key].userName}</p>
-          </React.Fragment>
-          : null
-      ))}
+          {Object.keys(users).map((key) =>
+            key === props.userId ? (
+              <React.Fragment>
+                <div className="rounded-full h-16 w-16 overflow-hidden">
+                  <img
+                    src={`${users[key].profilePic}`}
+                    alt={`${users[key].userName}`}
+                  />
+                </div>
+                <p className="m-0">{users[key].userName}</p>
+              </React.Fragment>
+            ) : null
+          )}
         </div>
       </div>
     </div>

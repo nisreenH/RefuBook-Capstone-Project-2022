@@ -1,13 +1,13 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Carousel from 'react-elastic-carousel';
 import '../../index.css';
 import Card from '../Card';
-import data from '../../utils/data';
+// import data from '../../utils/data';
 import BlogsForm from './BlogsForm';
 import { UserAuth } from '../../context/authContext';
 import { useNavigate } from 'react-router-dom';
 import { db } from '../../firebase';
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs } from 'firebase/firestore';
 
 export default function Blogs() {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ export default function Blogs() {
   const [blogs, setBlogs] = useState({});
   useEffect(() => {
     async function fetchBlogs() {
-      const querySnapshot = await getDocs(collection(db, "blogs"));
+      const querySnapshot = await getDocs(collection(db, 'blogs'));
       querySnapshot.forEach((doc) => {
         setBlogs((prevState) => ({
           ...prevState,
@@ -26,7 +26,6 @@ export default function Blogs() {
     fetchBlogs();
   }, []);
   // console.log(blogs);
-
 
   function handleRedirection() {
     navigate('/signup');
@@ -53,9 +52,9 @@ export default function Blogs() {
         autoPlay={true}
         infiniteLoop={true}
       >
-         {Object.keys(blogs).map((key) => (
+        {Object.keys(blogs).map((key) => (
           <Card props={blogs[key]} key={key} blogId={key} />
-      ))}
+        ))}
       </Carousel>
       <button
         className="bg-sec text-prim active:bg-prim border-2 border-prim uppercase font-bold  text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
@@ -68,9 +67,9 @@ export default function Blogs() {
       </button>
       <BlogsForm trigger={showModal} setTrigger={setShowModal} />
       <div className="mb-10 text-left md:px-16 grid grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 gap-4 content-center">
-          {Object.keys(blogs).map((key) => (
-          <Card props={blogs[key]} key={key} blogId={key}/>
-      ))}
+        {Object.keys(blogs).map((key) => (
+          <Card props={blogs[key]} key={key} blogId={key} />
+        ))}
       </div>
     </div>
   );

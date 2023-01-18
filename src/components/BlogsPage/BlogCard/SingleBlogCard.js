@@ -3,7 +3,7 @@ import { db } from '../../../firebase';
 import { doc, getDoc } from 'firebase/firestore';
 
 export default function SingleBlogCard({ blogId, props }) {
-console.log(blogId);
+  console.log(blogId);
   const [users, setUsers] = useState({});
   useEffect(() => {
     async function fetchUsers() {
@@ -17,7 +17,7 @@ console.log(blogId);
       }
     }
     fetchUsers();
-  }, []);
+  }, [props.userId]);
 
   return (
     <div className=" max-w-7xl h-auto flex flex-col flex-wrap items-center justify-center">
@@ -91,7 +91,11 @@ console.log(blogId);
             </svg>
           </a>
         </div>
-        <img className="rounded-t-lg w-full" src={`${props.blogImgUrl}`} alt="" />
+        <img
+          className="rounded-t-lg w-full"
+          src={`${props.blogImgUrl}`}
+          alt=""
+        />
         {/* </div> */}
       </div>
       <div className="inline-flex mt-4 gap-6 items-center justify-center px-3 py-2 text-sm font-medium  w-full ">
@@ -107,9 +111,7 @@ console.log(blogId);
           {props.subTitle}
         </h5>
         <div className=" ">
-          <p className=" mb-3 font-normal text-gray-700 ">
-            {props.blogBody}
-          </p>
+          <p className=" mb-3 font-normal text-gray-700 ">{props.blogBody}</p>
         </div>
       </div>
     </div>
