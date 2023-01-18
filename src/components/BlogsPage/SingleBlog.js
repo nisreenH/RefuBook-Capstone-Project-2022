@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// // import Card from './BlogCard/Card';
 import SingleBlogCard from './BlogCard/SingleBlogCard';
 import { useParams } from 'react-router-dom';
 import { db } from '../../firebase';
@@ -65,10 +64,6 @@ export default function SingleBlog() {
     async function fetchBlogs() {
       const querySnapshot = await getDocs(collection(db, 'blogs'));
       querySnapshot.forEach((doc) => {
-        // setBlogs((blogs) => ({
-        //   ...blogs,
-        //   [doc.id]: doc.data()
-        // }));
         setBlogs((prevState) => ({
           ...prevState,
           [doc.id]: doc.data(),
@@ -90,12 +85,11 @@ export default function SingleBlog() {
   if (randomKey1 === randomKey2) {
     randomIndex2 = Math.floor(Math.random() * keys.length);
     randomKey2 = keys[randomIndex2];
-  }
+  };
 
   return (
     <div className="md:flex justify-center gap-x-4">
       <div>
-        {/* <SingleBlogCard blogId={blogId} props={singleBlog[blogId]} key={blogId} /> */}
         {Object.keys(singleBlog).map((key) => (
           <SingleBlogCard props={singleBlog[key]} key={key} blogId={key} />
         ))}

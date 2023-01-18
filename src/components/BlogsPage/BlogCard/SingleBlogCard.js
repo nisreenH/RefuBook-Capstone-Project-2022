@@ -3,7 +3,7 @@ import { db } from '../../../firebase';
 import { doc, getDoc } from 'firebase/firestore';
 
 export default function SingleBlogCard({ blogId, props }) {
-
+console.log(blogId);
   const [users, setUsers] = useState({});
   useEffect(() => {
     async function fetchUsers() {
@@ -18,14 +18,12 @@ export default function SingleBlogCard({ blogId, props }) {
     }
     fetchUsers();
   }, []);
-  // console.log(users);
-  // console.log(users.email);
 
   return (
     <div className=" max-w-7xl h-auto flex flex-col flex-wrap items-center justify-center">
       <div className="w-4/6">
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
-          {props.title}
+          {props.BlogTitle}
         </h5>
         {/* <div className='relative'> */}
         <div className=" flex flex-col pt-8 pr-2 gap-2 absolute">
@@ -93,7 +91,7 @@ export default function SingleBlogCard({ blogId, props }) {
             </svg>
           </a>
         </div>
-        <img className="rounded-t-lg w-full" src={`${props.img}`} alt="" />
+        <img className="rounded-t-lg w-full" src={`${props.blogImgUrl}`} alt="" />
         {/* </div> */}
       </div>
       <div className="inline-flex mt-4 gap-6 items-center justify-center px-3 py-2 text-sm font-medium  w-full ">
@@ -110,7 +108,7 @@ export default function SingleBlogCard({ blogId, props }) {
         </h5>
         <div className=" ">
           <p className=" mb-3 font-normal text-gray-700 ">
-            {props.body}
+            {props.blogBody}
           </p>
         </div>
       </div>

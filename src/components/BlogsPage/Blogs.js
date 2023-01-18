@@ -17,10 +17,6 @@ export default function Blogs() {
     async function fetchBlogs() {
       const querySnapshot = await getDocs(collection(db, "blogs"));
       querySnapshot.forEach((doc) => {
-        // setBlogs((blogs) => ({
-        //   ...blogs,
-        //   [doc.id]: doc.data()
-        // }));
         setBlogs((prevState) => ({
           ...prevState,
           [doc.id]: doc.data(),
