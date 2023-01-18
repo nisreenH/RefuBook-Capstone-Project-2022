@@ -1,5 +1,10 @@
 # Capstone Project
 
+
+## team members
+* mustafa * mehnaz
+* nisreen * yahia
+
 You'll be building this project with your peers. You'll be able to read more about the project you will build on your Canvas.
 
 ## Issues and Pull Requests
