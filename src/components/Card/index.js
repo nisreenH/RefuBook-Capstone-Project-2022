@@ -46,7 +46,7 @@ export default function Card({ props, blogId }) {
             {props.BlogTitle}
           </h5>
         </div>
-        <p class="mb-3 font-normal text-gray-700">{props.subTitle}</p>
+        <p class="mb-10 font-normal text-gray-700 ">{props.subTitle}</p>
         <div class="inline-flex gap-6 items-center px-3 py-2 text-sm font-medium  w-full ">
           {Object.keys(users).map((key) =>
             key === props.userId ? (

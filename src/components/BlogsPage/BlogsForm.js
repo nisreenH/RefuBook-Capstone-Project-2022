@@ -40,6 +40,7 @@ export default function BlogsForm(props) {
     e.preventDefault();
 
     handleFormData(title, subTitle, blogImg, blogBody, user.uid, blogCategorie);
+    props.setTrigger(false);
   };
 
   return (
