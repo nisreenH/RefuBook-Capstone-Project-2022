@@ -33,6 +33,8 @@ export const AuthContextProvider = ({ children }) => {
       userName: user.displayName,
       email: user.email,
       profilePic: user.photoURL,
+      bio: '',
+      location: '',
     });
   }, [user]);
   useEffect(() => {

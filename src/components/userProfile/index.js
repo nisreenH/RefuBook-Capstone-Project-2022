@@ -4,9 +4,13 @@ import './index.css';
 import data from '../../utils/data';
 import Card from '../Card';
 import Avatar from '../Avatar';
+import { Link } from 'react-router-dom';
+
+import { UserAuth } from '../../context/authContext';
 
 const UserProfile = () => {
   const blogs = data[0].blogs;
+  const { user } = UserAuth();
 
   const settings = {
     infinite: false,
@@ -43,9 +47,24 @@ const UserProfile = () => {
   };
   return (
     <div className="flex justify-center items-center flex-col">
-      <Avatar width={'10rem'} height={'10rem'} margin={'2.256rem 0rem'} />
+      <div className="userProfile-div relative ">
+        <Avatar
+          width={'10rem'}
+          height={'10rem'}
+          margin={'2.256rem 0rem'}
+          isOpenNav={false}
+        />
+        <Link to={'/user-profile/update-profile'}>
+          <div
+            className="absolute bottom-12 right-4 rounded-full  "
+            style={{ backgroundColor: '#4699C2' }}
+          >
+            <div className="updateIcon "></div>
+          </div>
+        </Link>
+      </div>
 
-      <h2>mr.Yahia</h2>
+      <h2>{user.displayName}</h2>
       <Slider {...settings}>
         {blogs.map((ele) => {
           return (

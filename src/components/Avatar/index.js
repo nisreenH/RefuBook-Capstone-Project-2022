@@ -1,12 +1,12 @@
 import React, { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { UserAuth } from '../../context/authContext';
-
 //!`fn
-const Index = ({ width, height, margin }) => {
+const Index = ({ width, height, margin, isOpenNav }) => {
   const [isOpen, setIsOpen] = useState('');
   const { logOut } = UserAuth();
 
+  const { user } = UserAuth();
   const isClickProfile = () => {
     //setState(prevState => [...prevState, 'somedata'] )
     console.log(isOpen);
@@ -15,6 +15,7 @@ const Index = ({ width, height, margin }) => {
   const handleSignOut = async () => {
     try {
       await logOut();
+      alert('god bye');
     } catch (error) {
       console.log(error);
     }
@@ -22,17 +23,17 @@ const Index = ({ width, height, margin }) => {
 
   return (
     <Fragment>
-      <div class="relative" style={{ cursor: 'pointer' }}>
+      <div class=" " style={{ cursor: 'pointer' }}>
         <img
           class="w-10 h-10 rounded-full profile_picture"
-          src="https://img.freepik.com/premium-psd/3d-cartoon-character-isolated-3d-rendering_235528-561.jpg?w=2000"
+          src={`${user.photoURL}`}
           alt=""
           style={{ width, height, margin }}
           onClick={() => isClickProfile()}
         />
         {/* <span class="bottom-0 left-7 absolute  w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span> */}
       </div>
-      {isOpen ? (
+      {isOpen & isOpenNav ? (
         <div
           xTransitionEnter="transition ease-out duration-600"
           xTransitionEnter-start="transform opacity-0 scale-95"
