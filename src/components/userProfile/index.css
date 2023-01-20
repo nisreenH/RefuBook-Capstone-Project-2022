@@ -20,3 +20,16 @@ body {
 .carouselCard {
   margin: 2rem 2rem;
 }
+
+.userProfile-div {
+  padding: 1rem;
+}
+
+.updateIcon {
+  background-image: url('../../assets/update_icon.png');
+  background-position: center;
+  background-repeat: no-repeat;
+
+  width: 35px;
+  height: 35px;
+}

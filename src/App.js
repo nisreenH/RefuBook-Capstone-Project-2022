@@ -13,6 +13,7 @@ import About from './components/about/About';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Footer from './components/Footer/Footer';
+import UpdateUserProfile from './components/userProfile/UpdateUserProfile';
 
 function App() {
   return (
@@ -28,6 +29,10 @@ function App() {
           <Route path="/SingleBlog/:blogId" element={<SingleBlog />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/user-profile" element={<UserProfile />} />
+          <Route
+            path="/user-profile/update-profile"
+            element={<UpdateUserProfile />}
+          />
         </Routes>
         <Footer />
       </AuthContextProvider>

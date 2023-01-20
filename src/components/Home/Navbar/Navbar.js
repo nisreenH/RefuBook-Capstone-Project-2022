@@ -139,7 +139,12 @@ export default function Navbar() {
               </li>
               <li className="flex flex-col items-center ">
                 {user?.displayName ? (
-                  <Avatar width={'4rem'} height={'4rem'} margin={'0'} />
+                  <Avatar
+                    width={'4rem'}
+                    height={'4rem'}
+                    margin={'0'}
+                    isOpenNav={true}
+                  />
                 ) : (
                   <Link
                     to="/signup"
