@@ -19,7 +19,7 @@ const UserProfileEdit = (props) => {
       setUserData(data.data());
     };
     getUserAsyncFv();
-  }, []);
+  }, [user.uid]);
 
   const fullName = user.displayName.split(' ');
   console.log('set user data', userData);
