@@ -1,11 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { db } from '../../../firebase';
+import { doc, getDoc } from 'firebase/firestore';
 
-export default function SingleBlogCard() {
+export default function SingleBlogCard({ blogId, props }) {
+  console.log(blogId);
+  const [users, setUsers] = useState({});
+  useEffect(() => {
+    async function fetchUsers() {
+      const docRef = doc(db, 'users', props.userId);
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        setUsers(docSnap.data());
+      } else {
+        console.log('No such document!');
+      }
+    }
+    fetchUsers();
+  }, [props.userId]);
+
   return (
     <div className=" max-w-7xl h-auto flex flex-col flex-wrap items-center justify-center">
       <div className="w-4/6">
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
-          Title Title Title Title Title Title Title
+          {props.BlogTitle}
         </h5>
         {/* <div className='relative'> */}
         <div className=" flex flex-col pt-8 pr-2 gap-2 absolute">
@@ -75,7 +93,7 @@ export default function SingleBlogCard() {
         </div>
         <img
           className="rounded-t-lg w-full"
-          src="https://img.business.com/w/700/aHR0cHM6Ly9pbWFnZXMuYnVzaW5lc3NuZXdzZGFpbHkuY29tL2FwcC91cGxvYWRzLzIwMjIvMDQvMDQwNzQ1NTMvMTU1NDI0NDAxMC5qcGVn"
+          src={`${props.blogImgUrl}`}
           alt=""
         />
         {/* </div> */}
@@ -83,35 +101,17 @@ export default function SingleBlogCard() {
       <div className="inline-flex mt-4 gap-6 items-center justify-center px-3 py-2 text-sm font-medium  w-full ">
         by:
         <div className="rounded-full h-16 w-16 overflow-hidden">
-          <img
-            src="https://img.business.com/w/700/aHR0cHM6Ly9pbWFnZXMuYnVzaW5lc3NuZXdzZGFpbHkuY29tL2FwcC91cGxvYWRzLzIwMjIvMDQvMDQwNzQ1NTMvMTU1NDI0NDAxMC5qcGVn"
-            alt="vdcd"
-          />
+          <img src={users.profilePic} alt="vdcd" />
         </div>
-        <p className="m-0 pb-2 text-blue-500">author</p>
+        <p className="m-0 pb-2 text-blue-500">{users.userName}</p>
       </div>
 
       <div className="w-4/6 text-left">
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
-          subTitle subTitle subTitle subTitle subTitle subTitlesubTitlesubTitle
-          subTitle subTitle subTitle subTitle subTitlesubTitle
+          {props.subTitle}
         </h5>
         <div className=" ">
-          <p className=" mb-3 font-normal text-gray-700 ">
-            Lorem ipsum dolor sitadad Lorem ipsum dolor sitadad Lorem ipsum
-            dolor sitadad Lorem ipsum dLorem ipsum dolor sitadad Lorem ipsum
-            dolor sitadad Lorem ipsum dolor sitadad Lorem ipsum dolor Lorem
-            ipsum dolor sitadad Lorem ipsum dolor sitadad Lorem ipsum dolor
-            sitadad Lorem ipsum dLorem ipsum dolor sitadad Lorem ipsum Lorem
-            ipsum dolor sitadad Lorem ipsum orem ipsum dolor sitadad Lorem ipsum
-            dolor sitadad Lorem ipsum dolor sitadad Lorem ipsum dolor Lorem
-            ipsum dolor sitadad Lorem ipsum dolor sitadad Lorem ipsum dolor
-            sitadad Lorem ipsum Lorem ipsum dolor sitadad Lorem ipsum dolor
-            sitadad Lorem ipsum dolor sitadad Lorem ipsum Lorem ipsum dolor
-            sitadad Lorem ipsum dolor sitadad Lorem ipsum dolor sitadad Lorem
-            ipsum Lorem ipsum dolor sitadad Lorem ipsum dolor sitadad Lorem
-            ipsum dolor
-          </p>
+          <p className=" mb-3 font-normal text-gray-700 ">{props.blogBody}</p>
         </div>
       </div>
     </div>
