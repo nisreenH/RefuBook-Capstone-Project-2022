@@ -25,7 +25,7 @@ export default function Blogs() {
     }
     fetchBlogs();
   }, []);
-  // console.log(blogs);
+  console.log(blogs);
 
   function handleRedirection() {
     navigate('/signup');

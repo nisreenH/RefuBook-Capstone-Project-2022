@@ -1,16 +1,42 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import './index.css';
-import data from '../../utils/data';
-import Card from '../Card';
+import Card from '../Card/index';
 import Avatar from '../Avatar';
 import { Link } from 'react-router-dom';
+import { db } from '../../firebase';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import Carousel from 'react-elastic-carousel';
 
 import { UserAuth } from '../../context/authContext';
 
 const UserProfile = () => {
-  const blogs = data[0].blogs;
   const { user } = UserAuth();
+
+  const [blogs, setBlogs] = useState({});
+  useEffect(() => {
+    async function fetchUserBlogs() {
+      const q = query(
+        collection(db, 'blogs'),
+        where('userId', '==', `${user.uid}`)
+      );
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        setBlogs((prevState) => ({
+          ...prevState,
+          [doc.id]: doc.data(),
+        }));
+      });
+    }
+    fetchUserBlogs();
+  }, [user.uid]);
+
+  const breakPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 550, itemsToShow: 2 },
+    { width: 760, itemsToShow: 3 },
+    { width: 1200, itemsToShow: 4 },
+  ];
 
   const settings = {
     infinite: false,
@@ -65,21 +91,30 @@ const UserProfile = () => {
       </div>
 
       <h2>{user.displayName}</h2>
-      <Slider {...settings}>
-        {blogs.map((ele) => {
-          return (
-            <Card
-              props={{
-                title: ele.title,
-                text: ele.text,
-                userProfilePic: ele.userProfilePic,
-                user: ele.user,
-              }}
-              key={ele.id}
-            />
-          );
-        })}
-      </Slider>
+
+      <Carousel
+        showArrows={false}
+        breakPoints={breakPoints}
+        className="w-full text-left p-6 flex items-center justify-center mb-20"
+        autoPlay={true}
+        infiniteLoop={true}
+      >
+        {Object.keys(blogs).map((key) => (
+          <Card props={blogs[key]} key={key} blogId={key} />
+        ))}
+      </Carousel>
+
+      {/* <Slider {...settings}> */}
+
+      {/* {Object.keys(blogs).map((key) => (
+ 
+          <Card props={blogs[key]} key={key} blogId={key} />
+          // <div>
+          //   <h1> {blogs[key].BlogTitle}</h1>
+          // </div>
+  
+  ))} */}
+      {/* </Slider> */}
     </div>
   );
 };
