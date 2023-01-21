@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import pic from './image.jpg';
 import { useTranslation } from 'react-i18next';
 import StoryCard from './StoryCard';
 import { db } from '../../../firebase';
@@ -47,9 +46,10 @@ function Story() {
         <p className="">{t('home.stories-section.subtitle')} </p>
       </header>
 
-      {/* <StoryCard props={blogs[randomKey1]} blogId={randomKey1}/> */}
+      <StoryCard props={blogs[randomKey1]} blogId={randomKey1}/>
+      <StoryCard props={blogs[randomKey2]} blogId={randomKey2}/>
 
-      <div className="md:flex items-center p-12 gap-14 text-left text-white">
+      {/* <div className="md:flex items-center p-12 gap-14 text-left text-white">
         <div className="w-full">
           <img className="shrink-0 sm:h-full" src={pic} alt="pic" />
         </div>
@@ -72,7 +72,7 @@ function Story() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
