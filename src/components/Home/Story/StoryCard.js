@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { db } from '../../../firebase';
 import { useNavigate } from 'react-router-dom';
-import { collection, getDoc, doc } from 'firebase/firestore';
-import { useTranslation } from 'react-i18next';
-import Spinner from '../../spinner/Spinner';
+import { getDoc, doc } from 'firebase/firestore';
+// import { useTranslation } from 'react-i18next';
+// import Spinner from '../../spinner/Spinner';
 
 export default function StoryCard({ props, blogId }) {
-
   const navigate = useNavigate();
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   const [users, setUsers] = useState({});
   useEffect(() => {
     async function fetchUser() {
@@ -23,7 +22,7 @@ export default function StoryCard({ props, blogId }) {
     }
     fetchUser();
   }, [props.userId]);
-//   console.log(users);
+  //   console.log(users);
 
   function handleRedirection() {
     navigate(`/SingleBlog/${blogId}`);
@@ -55,9 +54,7 @@ export default function StoryCard({ props, blogId }) {
             alt="pic"
           />
           <div className="text-left">
-            <p className="font-bold text-sm ">
-              {users.userName}
-            </p>
+            <p className="font-bold text-sm ">{users.userName}</p>
             {/* <span className="font-light text-xs">
               {t('home.stories-section.details.language-article-state')}
             </span> */}

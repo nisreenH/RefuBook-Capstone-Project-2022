@@ -161,7 +161,7 @@ export default function Blogs() {
       <BlogsForm trigger={showModal} setTrigger={setShowModal} />
       <div className="mb-10 text-left md:px-16 grid grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 gap-4 content-center">
         {blogs
-          ? !selected || selected == "all"
+          ? !selected || selected === 'all'
             ? blogs.map((ele) => (
                 <Card blogId={ele.id} props={ele} key={ele.id} />
               ))

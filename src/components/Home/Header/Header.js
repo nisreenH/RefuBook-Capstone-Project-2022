@@ -18,12 +18,13 @@ export default function Header() {
               {t('home.hero.subtitle1')} <br /> {t('home.hero.subtitle2')}
             </h3>
             <p className="text-gray-500">{t('home.hero.content')}</p>
-            { !user ?
-            <button className="bg-prim px-4 py-2 rounded-full text-white font-medium">
-              {t('home.hero.button')}
-            </button>
-            : false
-            }
+            {!user ? (
+              <button className="bg-prim px-4 py-2 rounded-full text-white font-medium">
+                {t('home.hero.button')}
+              </button>
+            ) : (
+              false
+            )}
           </div>
           <div className="mb-12 lg:mb-0">
             <svg
@@ -405,6 +406,5 @@ export default function Header() {
         </div>
       </div>
     </div>
-    
   );
 }

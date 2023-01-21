@@ -39,7 +39,7 @@ export default function SingleBlog() {
     }
     fetchBlogs();
   }, []);
- 
+
   let keys = Object.keys(blogs);
   keys = keys.filter((key) => key !== blogId);
   const indexes = [...Array(keys.length).keys()];

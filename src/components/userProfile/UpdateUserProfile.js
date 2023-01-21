@@ -16,7 +16,6 @@ const UserProfileEdit = (props) => {
 
   const { user } = UserAuth();
 
-
   useEffect(() => {
     const getUserAsyncFv = async () => {
       const docRef = doc(db, 'users', user.uid);
@@ -28,7 +27,7 @@ const UserProfileEdit = (props) => {
       setLocation(data.data().location);
     };
     getUserAsyncFv();
-  }, [user.uid,isClicked]);
+  }, [user.uid, isClicked]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

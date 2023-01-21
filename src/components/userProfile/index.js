@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Slider from 'react-slick';
+// import Slider from 'react-slick';
 import './index.css';
 import Card from '../Card/index';
 import Avatar from '../Avatar';
@@ -38,39 +38,39 @@ const UserProfile = () => {
     { width: 1200, itemsToShow: 4 },
   ];
 
-  const settings = {
-    infinite: false,
-    slidesToShow: 3,
-    speed: 500,
-    dots: true,
-    rows: 2,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          rows: 1,
-          dots: true,
-        },
-      },
-    ],
-  };
+  // const settings = {
+  //   infinite: false,
+  //   slidesToShow: 3,
+  //   speed: 500,
+  //   dots: true,
+  //   rows: 2,
+  //   responsive: [
+  //     {
+  //       breakpoint: 1024,
+  //       settings: {
+  //         slidesToShow: 3,
+  //         slidesToScroll: 1,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 768,
+  //       settings: {
+  //         slidesToShow: 2,
+  //         slidesToScroll: 1,
+  //         initialSlide: 2,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 480,
+  //       settings: {
+  //         slidesToShow: 1,
+  //         slidesToScroll: 1,
+  //         rows: 1,
+  //         dots: true,
+  //       },
+  //     },
+  //   ],
+  // };
   return (
     <div className="flex justify-center items-center flex-col">
       <div className="userProfile-div relative ">

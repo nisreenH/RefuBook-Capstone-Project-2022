@@ -6,7 +6,7 @@ const Index = ({ width, height, margin, isOpenNav }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const { user, logOut } = UserAuth();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const isClickProfile = () => {
     setIsOpen(!isOpen);
   };
@@ -14,7 +14,7 @@ const Index = ({ width, height, margin, isOpenNav }) => {
     try {
       await logOut();
       alert('goodbye');
-      navigate("/");
+      navigate('/');
     } catch (error) {
       console.log(error);
     }
@@ -48,7 +48,7 @@ const Index = ({ width, height, margin, isOpenNav }) => {
                 to="/user-profile"
                 className="flex items-center transform transition-colors duration-200 border-r-4 border-transparent hover:border-indigo-700"
                 onClick={() => setIsOpen(false)}
-             >
+              >
                 <div className="mr-3">
                   <svg
                     className="w-6 h-6"
