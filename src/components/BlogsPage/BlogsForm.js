@@ -51,7 +51,7 @@ export default function BlogsForm(props) {
             <div className="relative w-auto my-6 mx-auto max-w-3xl">
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                  <h3 className="text-3xl font-semibold">Type Your Blog</h3>
+                  <h3 className="text-3xl font-semibold">Blog Details</h3>
                   <button
                     className="p-1 ml-auto bg-transparent border-0 text-black  float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
                     onClick={() => props.setTrigger(false)}
@@ -123,10 +123,15 @@ export default function BlogsForm(props) {
                         <select
                           id="categorie"
                           onChange={(e) => setBlogCategorie(e.target.value)}
-                          placeholder="priority"
+                          placeholder="categories"
                           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                           required
                         >
+                          {' '}
+                          <option className="" vlaue={null} selected>
+                            {' '}
+                            --- Select ---
+                          </option>
                           {categories.map((ele) => (
                             <option vlaue={ele.name} key={ele.name}>
                               {ele.name}
