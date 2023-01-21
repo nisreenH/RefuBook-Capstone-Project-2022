@@ -123,10 +123,15 @@ export default function BlogsForm(props) {
                         <select
                           id="categorie"
                           onChange={(e) => setBlogCategorie(e.target.value)}
-                          placeholder="priority"
+                          placeholder="categories"
                           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                           required
                         >
+                          {' '}
+                          <option className="" vlaue={null} selected>
+                            {' '}
+                            --- Select ---
+                          </option>
                           {categories.map((ele) => (
                             <option vlaue={ele.name} key={ele.name}>
                               {ele.name}

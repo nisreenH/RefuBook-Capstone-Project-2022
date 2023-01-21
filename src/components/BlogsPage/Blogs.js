@@ -7,32 +7,33 @@ import BlogsForm from './BlogsForm';
 import { UserAuth } from '../../context/authContext';
 import { useNavigate } from 'react-router-dom';
 import { db } from '../../firebase';
-import { collection, getDocs, onSnapshot } from 'firebase/firestore';
+import { collection, onSnapshot } from 'firebase/firestore';
+import Spinner from '../spinner/Spinner';
 
 export default function Blogs() {
   const navigate = useNavigate();
 
-  const [blogs, setBlogs] = useState({});
+  const [blogs, setBlogs] = useState(null);
+  // useEffect(() => {
+  //   async function fetchBlogs() {
+  //     const querySnapshot = await getDocs(collection(db, 'blogs'));
+  //     querySnapshot.forEach((doc) => {
+  //       setBlogs((prevState) => ({
+  //         ...prevState,
+  //         [doc.id]: doc.data(),
+  //       }));
+  //     });
+  //   }
+  //   fetchBlogs();
+  // }, []);
   useEffect(() => {
-    async function fetchBlogs() {
-      const querySnapshot = await getDocs(collection(db, 'blogs'));
-      querySnapshot.forEach((doc) => {
-        setBlogs((prevState) => ({
-          ...prevState,
-          [doc.id]: doc.data(),
-        }));
-      });
-    }
-    fetchBlogs();
+    const unsubscribe = onSnapshot(collection(db, 'blogs'), (snapshot) => {
+      setBlogs(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    });
+
+    return unsubscribe;
   }, []);
   console.log(blogs);
-  // useEffect(() => {
-  //   const unsubscribe = onSnapshot(collection(db, 'blogs'), (snapshot) => {
-  //     setBlogs(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-  //   });
-
-  //   return unsubscribe;
-  // }, []);
   function handleRedirection() {
     navigate('/signup');
   }
@@ -64,12 +65,28 @@ export default function Blogs() {
     console.log('option', e.target.value);
     setSelected(e.target.value);
   };
-  return (
+  return blogs ? (
     <div
       className=" w-auto px-6
     md:px-12 relative"
     >
-      <div className="flex  justify-between items-center border-b-2 border-gray-200">
+      <Carousel
+        showArrows={false}
+        breakPoints={breakPoints}
+        className="w-full text-left p-6 flex items-center justify-center mb-20"
+        autoPlay={true}
+        infiniteLoop={true}
+      >
+        {blogs
+          ? blogs.map((ele) => (
+              <Card blogId={ele.id} props={ele} key={ele.id} />
+            ))
+          : console.log('none')}
+      </Carousel>
+
+      {/* adminstration bar */}
+
+      <div className="flex relative justify-between items-center border-b-2 border-gray-200">
         <button
           className="bg-sec text-prim active:bg-prim border-2 border-prim uppercase font-bold  text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
           type="button"
@@ -140,33 +157,21 @@ export default function Blogs() {
           </form> */}
         </div>
       </div>
-      <Carousel
-        showArrows={false}
-        breakPoints={breakPoints}
-        className="w-full text-left p-6 flex items-center justify-center mb-20"
-        autoPlay={true}
-        infiniteLoop={true}
-      >
-        {Object.keys(blogs).map((key) => (
-          <Card props={blogs[key]} key={key} blogId={key} />
-        ))}
-      </Carousel>
 
       <BlogsForm trigger={showModal} setTrigger={setShowModal} />
       <div className="mb-10 text-left md:px-16 grid grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 gap-4 content-center">
-        {
-          // !selected
-          //   ?
-          Object.keys(blogs).map((key) => (
-            <Card props={blogs[key]} key={key} blogId={key} />
-          ))
-          // blogs
-          //   ? blogs.map((ele) => (
-          //       <Card key={ele.id} blogId={ele.id} props={ele} />
-          //     ))
-          //   : 'Loading ...'
-        }
+        {blogs
+          ? !selected
+            ? blogs.map((ele) => (
+                <Card blogId={ele.id} props={ele} key={ele.id} />
+              ))
+            : blogs
+                .filter((ele) => ele.categories === selected)
+                .map((ele) => <Card key={ele.id} props={ele} blogId={ele.id} />)
+          : ''}
       </div>
     </div>
+  ) : (
+    <Spinner />
   );
 }
