@@ -7,6 +7,14 @@
     "signUp": "Sign up",
     "logOut": "logout"
   },
+  "contact": {
+    "contactTitle": "keep in tuch",
+    "contactContent": "we are looking to change that with the introduction..",
+    "message": "message",
+    "email": "E-mail",
+    "send": "send",
+    "messageContent": "your message..."
+  },
   "home": {
     "hero": {
       "appTitle": "Refubook",
@@ -48,13 +56,13 @@
       },
       "first": {
         "text": "Now more than ever, access to health for everyone should be within Refubook.",
-        "whoSay": "Dr. Louis Li",
-        "position": "Refu University"
+        "whoSay": "Louis Li",
+        "position": "Trainer at Recoded"
       },
       "second": {
-        "text": "We hope that the Refubook social App is an impactful digital solution for the youth to access health care facilities",
-        "whoSay": "Jaime Mikosh",
-        "position": "Poject Manager"
+        "text": "Now more than ever, access to health for everyone should be within Refubook.",
+        "whoSay": "Louis Li",
+        "position": "Trainer at Recoded"
       }
     },
 
@@ -77,8 +85,8 @@
     "title": "About",
     "discreption": "About page",
     "section-title": "About the project",
-    "section-content": "Refubook is a regional initiative of the Center for Sustainable Development at Rfu University which aims to bridge the gap in health literacy and health care access among refugee and local youth living in Turkey and Lebanon, and it is implemented in partnership with the Columbia Global Center in Istanbul as well as universities and NGOs supporting refugee and youth health initiatives in Turkey and Lebanon.",
-    "team": {
+    "section-content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "team":{
       "heading": "Our Team",
       "countries": ["View All", "Support Team", "Iraq", "Lebanon"],
       "members-all": [
@@ -88,7 +96,7 @@
         },
         {
           "name": "Ammar Sammour",
-          "title": "Senior Trainer, Istanbul"
+          "title": "Senior Trainer"
         },
 
         {
@@ -150,19 +158,19 @@
       "members-iraq": [
         {
           "name": "Mustafa M. Younus",
-          "title": "Youth Group Member"
+          "title": "team Member"
         },
         {
           "name": "Ali majed",
-          "title": "Youth Group Member"
+          "title": "team Member"
         },
         {
           "name": "Mahnaz Nazeer",
-          "title": "Youth Group Member"
+          "title": "team Member"
         },
         {
           "name": "Yahia Hasan Baiz ",
-          "title": "Youth Group Member"
+          "title": "team Member"
         }
       ],
       "members-lebanon": [
@@ -199,18 +207,6 @@
     "or": "OR",
     "buttonGoogle": "Google",
     "signUp": "Want to be a member? Sign up"
-  },
-  "contact": {
-    "title": "Contact",
-    "description": "Contact Refuebook project",
-    "heading": "Get In Touch",
-    "paragraph": "You are welcome to send any question, or if you want to send an article to share it on our blog, drop us an email with your article, and we are going to contact you as soon as your email delivered to us.",
-    "formLabels": {
-      "name": "Name:",
-      "email": "Email:",
-      "message": "Message:",
-      "submit": "Submit"
-    }
   },
   "userProfile": {
     "edit": {
