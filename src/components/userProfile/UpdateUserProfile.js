@@ -4,31 +4,31 @@ import { UserAuth } from '../../context/authContext';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { db } from '../../firebase';
 import { useNavigate } from 'react-router-dom';
+
 const UserProfileEdit = (props) => {
   const navigate = useNavigate();
-  const [userData, setUserData] = useState();
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [username, setUsername] = useState('');
+  const [bio, setBio] = useState('');
+  const [location, setLocation] = useState('');
+  const [isClicked, setIsClicked] = useState(false);
 
   const { user } = UserAuth();
-  //   console.log('user: ', user);
+
 
   useEffect(() => {
     const getUserAsyncFv = async () => {
       const docRef = doc(db, 'users', user.uid);
       const data = await getDoc(docRef);
-      //   console.log('data is inside docsna: ', data.data());
-      setUserData(data.data());
+      setFirstName(data.data().firstName);
+      setLastName(data.data().lastName);
+      setUsername(data.data().userName);
+      setBio(data.data().bio);
+      setLocation(data.data().location);
     };
     getUserAsyncFv();
-  }, [user.uid]);
-
-  const fullName = user.displayName.split(' ');
-  console.log('set user data', userData);
-
-  const [firstName, setFirstName] = useState(fullName[0]);
-  const [lastName, setLastName] = useState(fullName[1]);
-  const [bio, setBio] = useState(user.bio);
-  const [location, setLocation] = useState(user.location);
-  const [isClicked, setIsClicked] = useState(false);
+  }, [user.uid,isClicked]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -57,7 +57,7 @@ const UserProfileEdit = (props) => {
                 htmlFor="first name"
                 className="block text-blue-700 text-sm font-bold mb-2"
               >
-                first Name
+                First Name
               </label>
               <input
                 required
@@ -73,9 +73,8 @@ const UserProfileEdit = (props) => {
                 htmlFor="last name"
                 className="block text-blue-700 text-sm font-bold mb-2"
               >
-                last Name
+                Last Name
               </label>
-              {/* ///test */}
               <input
                 required
                 type="text"
@@ -92,7 +91,7 @@ const UserProfileEdit = (props) => {
               htmlFor="biography"
               className="block text-blue-700 text-sm font-bold mb-2"
             >
-              biography
+              Biography
             </label>
             <textarea
               onChange={(e) => setBio(e.target.value)}
@@ -125,7 +124,7 @@ const UserProfileEdit = (props) => {
               className="uppercase md:text-base text-sm bg-blue-500 hover:bg-blue-700 text-white font-bold mt-4 mr-4 py-2 md:px-12 px-6 rounded-full focus:outline-none focus:shadow-outline"
               type="submit"
             >
-              save
+              Save
             </button>
             <button
               className="uppercase md:text-base text-sm bg-transparent border-solid border-2 border-blue-500 text-blue-500 hover:bg-blue-700 hover:text-white font-bold mt-4 py-2 md:px-6 px-4 rounded-full focus:outline-none focus:shadow-outline"
@@ -135,7 +134,7 @@ const UserProfileEdit = (props) => {
                 setIsClicked(!isClicked);
               }}
             >
-              cancle
+              Cancel
             </button>
           </div>
         </form>

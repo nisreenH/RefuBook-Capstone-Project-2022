@@ -5,14 +5,14 @@
     "contact": "Contact",
     "blog": "Blog",
     "signUp": "Sign up",
-    "logOut": "logout"
+    "logOut": "Logout"
   },
   "contact": {
-    "contactTitle": "keep in tuch",
-    "contactContent": "we are looking to change that with the introduction..",
+    "contactTitle": "Get in touch",
+    "contactContent": "If you have any questions or concerns, please don't hesitate to get in touch with us. Our team is here to help and we would be more than happy to assist you.",
     "message": "message",
     "email": "E-mail",
-    "send": "send",
+    "send": "Send",
     "messageContent": "your message..."
   },
   "home": {

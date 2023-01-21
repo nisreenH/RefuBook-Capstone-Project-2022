@@ -13,7 +13,7 @@ import About from './components/about/About';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Footer from './components/Footer/Footer';
-import UpdateUserProfile from './components/userProfile/UpdateUserProfile1';
+import UpdateUserProfile from './components/userProfile/UpdateUserProfile';
 
 function App() {
   return (

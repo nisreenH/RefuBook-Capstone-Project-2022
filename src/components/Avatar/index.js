@@ -1,21 +1,20 @@
 import React, { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { UserAuth } from '../../context/authContext';
-//!`fn
+import { useNavigate } from 'react-router-dom';
 const Index = ({ width, height, margin, isOpenNav }) => {
-  const [isOpen, setIsOpen] = useState('');
-  const { logOut } = UserAuth();
+  const [isOpen, setIsOpen] = useState(false);
 
-  const { user } = UserAuth();
+  const { user, logOut } = UserAuth();
+  const navigate = useNavigate()
   const isClickProfile = () => {
-    //setState(prevState => [...prevState, 'somedata'] )
-    console.log(isOpen);
-    setIsOpen((prevState) => !prevState);
+    setIsOpen(!isOpen);
   };
   const handleSignOut = async () => {
     try {
       await logOut();
-      alert('god bye');
+      alert('goodbye');
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
@@ -48,7 +47,8 @@ const Index = ({ width, height, margin, isOpenNav }) => {
               <Link
                 to="/user-profile"
                 className="flex items-center transform transition-colors duration-200 border-r-4 border-transparent hover:border-indigo-700"
-              >
+                onClick={() => setIsOpen(false)}
+             >
                 <div className="mr-3">
                   <svg
                     className="w-6 h-6"
@@ -65,13 +65,14 @@ const Index = ({ width, height, margin, isOpenNav }) => {
                     ></path>
                   </svg>
                 </div>
-                profile
+                Profile
               </Link>
             </li>
             <li className="font-medium">
               <Link
-                // href="#"
+                to="/user-profile/update-profile"
                 className="flex items-center transform transition-colors duration-200 border-r-4 border-transparent hover:border-indigo-700"
+                onClick={() => setIsOpen(false)}
               >
                 <div className="mr-3">
                   <svg
@@ -95,13 +96,13 @@ const Index = ({ width, height, margin, isOpenNav }) => {
                     ></path>
                   </svg>
                 </div>
-                Setting
+                Edit Profile
               </Link>
             </li>
             <hr className="dark:border-gray-700" />
             <li className="font-medium">
               <Link
-                onClick={() => handleSignOut}
+                onClick={handleSignOut}
                 className="flex items-center transform transition-colors duration-200 border-r-4 border-transparent hover:border-red-600"
               >
                 <div className="mr-3 text-red-600">

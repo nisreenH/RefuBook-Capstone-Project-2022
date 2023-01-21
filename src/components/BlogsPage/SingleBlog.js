@@ -4,11 +4,11 @@ import { useParams } from 'react-router-dom';
 import { db } from '../../firebase';
 import { collection, getDocs, doc, getDoc } from 'firebase/firestore';
 import Card from '../Card';
-
+import shuffle from '../../shuffle';
+import Spinner from '../spinner/Spinner';
 
 export default function SingleBlog() {
   let { blogId } = useParams();
-  // console.log(blogId);
   const [singleBlog, setSingleBlog] = useState({});
 
   useEffect(() => {
@@ -19,7 +19,6 @@ export default function SingleBlog() {
       if (docSnap.exists()) {
         setSingleBlog({ [docSnap.id]: docSnap.data() });
       } else {
-        // doc.data() will be undefined in this case
         console.log('No such document!');
       }
     }
@@ -40,20 +39,15 @@ export default function SingleBlog() {
     }
     fetchBlogs();
   }, []);
-  // console.log(blogs);
-
+ 
   let keys = Object.keys(blogs);
-  console.log(keys);
   keys = keys.filter((key) => key !== blogId);
-  const randomIndex1 = Math.floor(Math.random() * keys.length);
+  const indexes = [...Array(keys.length).keys()];
+  shuffle(indexes);
+  const randomIndex1 = indexes[0];
   const randomKey1 = keys[randomIndex1];
-  let randomIndex2 = Math.floor(Math.random() * keys.length);
-  let randomKey2 = keys[randomIndex2];
-
-  if (randomKey1 === randomKey2) {
-    randomIndex2 = Math.floor(Math.random() * keys.length);
-    randomKey2 = keys[randomIndex2];
-  }
+  const randomIndex2 = indexes[1];
+  const randomKey2 = keys[randomIndex2];
 
   return (
     <div className="md:flex justify-center gap-x-4">
@@ -72,7 +66,7 @@ export default function SingleBlog() {
               <Card props={blogs[randomKey2]} blogId={randomKey2} />
             </React.Fragment>
           ) : (
-            <p> Blog not found</p>
+            <Spinner />
           )}
         </div>
       </div>
