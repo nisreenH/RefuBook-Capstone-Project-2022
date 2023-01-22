@@ -55,7 +55,7 @@ export const AuthContextProvider = ({ children }) => {
 
   useEffect(() => {
     handleUser();
-  }, []);
+  }, [handleUser]);
 
   // useEffect(() => {
   //   user ? handleUser() : console.log('user', user);

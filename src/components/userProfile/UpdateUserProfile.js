@@ -13,7 +13,7 @@ const UserProfileEdit = (props) => {
   const [bio, setBio] = useState('');
   const [location, setLocation] = useState('');
   const [isClicked, setIsClicked] = useState(false);
-
+  console.log(username);
   const { user } = UserAuth();
 
   useEffect(() => {
