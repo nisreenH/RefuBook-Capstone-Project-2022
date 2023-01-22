@@ -101,7 +101,7 @@ export default function SingleBlogCard({ blogId, props }) {
       <div className="inline-flex mt-4 gap-6 items-center justify-center px-3 py-2 text-sm font-medium  w-full ">
         by:
         <div className="rounded-full h-16 w-16 overflow-hidden">
-          <img src={users.profilePic} alt="vdcd" />
+          <img src={users.profilePic} alt="pic" />
         </div>
         <p className="m-0 pb-2 text-blue-500">{users.userName}</p>
       </div>
