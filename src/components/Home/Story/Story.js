@@ -31,18 +31,20 @@ function Story() {
   const randomKey2 = keys[randomIndex2];
 
   return (
-    <div className="bg-prim px-20">
-      <header className="text-white items-center text-justify pt-14 w-96 ">
-        <h1 className="text-4xl font-normal sans-Roboto leading-10 pb-2">
+    <div className="bg-prim">
+      <header className="text-white text-center md:text-left pt-14 px-10">
+        <h1 className="text-4xl font-normal md:font-semibold sans-Roboto leading-10 pb-2">
           {t('home.stories-section.title')}
         </h1>
-        <p className="">{t('home.stories-section.subtitle')} </p>
+        <p className="text-lg md:text-xl">
+          {t('home.stories-section.subtitle')}{' '}
+        </p>
       </header>
       {blogs[randomKey1] ? (
-        <>
+        <div className="">
           <StoryCard props={blogs[randomKey1]} blogId={randomKey1} />
           <StoryCard props={blogs[randomKey2]} blogId={randomKey2} />
-        </>
+        </div>
       ) : (
         <Spinner />
       )}

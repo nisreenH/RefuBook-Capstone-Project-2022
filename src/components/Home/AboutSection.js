@@ -15,7 +15,7 @@ const About = () => {
     { width: 1200, itemsToShow: 4 },
   ];
   return (
-    <div className="w-screen  mb-24">
+    <div className="w-auto mb-24">
       <div className="flex flex-col items-center gap-4 lg:px-32">
         <div className="mx-4 my-3 flex flex-col gap-3 items-center">
           <h2 className="text-prim text-4xl">
