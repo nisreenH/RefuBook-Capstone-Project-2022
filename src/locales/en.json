@@ -5,14 +5,14 @@
     "contact": "Contact",
     "blog": "Blog",
     "signUp": "Sign up",
-    "logOut": "logout"
+    "logOut": "Logout"
   },
   "contact": {
-    "contactTitle": "keep in tuch",
-    "contactContent": "we are looking to change that with the introduction..",
+    "contactTitle": "Get in touch",
+    "contactContent": "If you have any questions or concerns, please don't hesitate to get in touch with us. Our team is here to help and we would be more than happy to assist you.",
     "message": "message",
     "email": "E-mail",
-    "send": "send",
+    "send": "Send",
     "messageContent": "your message..."
   },
   "home": {
@@ -86,7 +86,7 @@
     "discreption": "About page",
     "section-title": "About the project",
     "section-content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "team":{
+    "team": {
       "heading": "Our Team",
       "countries": ["View All", "Support Team", "Iraq", "Lebanon"],
       "members-all": [

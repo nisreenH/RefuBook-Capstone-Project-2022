@@ -123,14 +123,6 @@ export default function Navbar() {
               </li>
               <li>
                 <Link
-                  to="/SingleBlog"
-                  className="font-normal hover:font-bold hover:text-gray-300"
-                >
-                  Single Blog
-                </Link>
-              </li>
-              <li>
-                <Link
                   to="/Contact"
                   className="font-normal hover:font-bold hover:text-gray-300"
                 >
