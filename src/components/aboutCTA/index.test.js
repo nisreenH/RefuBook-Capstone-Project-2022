@@ -1,5 +1,5 @@
 import React from 'react';
-import aboutCTA from '.';
+import aboutCTA from './index';
 import renderer from 'react-test-renderer';
 
 it('aboutCTA renders correctly', () => {

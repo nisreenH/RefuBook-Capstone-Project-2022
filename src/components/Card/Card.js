@@ -26,7 +26,7 @@ export default function Card({ props, blogId }) {
     navigate(`/SingleBlog/${blogId}`);
   }
   return (
-    <div class="carouselCard max-w-sm bg-white border rounded-lg h-auto shadow-sm   ">
+    <div data-testid="card"  class="carouselCard max-w-sm bg-white border rounded-lg h-auto shadow-sm   ">
       {props.blogImgUrl ? (
         <div>
           <img

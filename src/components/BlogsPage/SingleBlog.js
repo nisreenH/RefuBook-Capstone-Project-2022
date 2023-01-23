@@ -3,7 +3,7 @@ import SingleBlogCard from './BlogCard/SingleBlogCard';
 import { useParams } from 'react-router-dom';
 import { db } from '../../firebase';
 import { collection, getDocs, doc, getDoc } from 'firebase/firestore';
-import Card from '../Card';
+import Card from '../Card/Card';
 
 // function Card() {
 //   return (

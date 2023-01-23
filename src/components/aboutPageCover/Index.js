@@ -9,7 +9,7 @@ const style = {
 
 function AboutPageCover() {
   return (
-    <div style={style.coverPhoto}>
+    <div style={style.coverPhoto} id='AboutPageCover'>
       <img className="w-full h-full mx-auto opacity-75" src={cover} alt="" />
     </div>
   );

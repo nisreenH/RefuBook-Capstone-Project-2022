@@ -7,7 +7,7 @@ import Testimonials from '../Testimonials/Testimonials';
 const About = () => {
   return (
     <>
-      <AboutPageCover />
+      <AboutPageCover id='AboutPageCover' />
       <AboutUs />
       <TeamSection />
       <Testimonials />

@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Carousel from 'react-elastic-carousel';
 import '../../index.css';
-import Card from '../Card';
+import Card from '../Card/Card';
 // import data from '../../utils/data';
 import BlogsForm from './BlogsForm';
 import { UserAuth } from '../../context/authContext';
 import { useNavigate } from 'react-router-dom';
 import { db } from '../../firebase';
+
 import { collection, getDocs } from 'firebase/firestore';
 
 export default function Blogs() {
@@ -51,6 +52,7 @@ export default function Blogs() {
         className="w-full text-left p-6 flex items-center justify-center mb-20"
         autoPlay={true}
         infiniteLoop={true}
+        id='carousel'
       >
         {Object.keys(blogs).map((key) => (
           <Card props={blogs[key]} key={key} blogId={key} />

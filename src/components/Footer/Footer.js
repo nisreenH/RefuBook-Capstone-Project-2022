@@ -106,7 +106,7 @@ function Footer() {
           <div>
             <a
               className="text-l mx-5 no-underline font-medium text-prim py-2 px-2 hover:bg-whity hover:text-purple-700 hover:scale-105 rounded-md transition duration-150 ease-in-out"
-              href="#Home"
+              href="/"
             >
               {t('navbar.home')}
             </a>
@@ -119,13 +119,13 @@ function Footer() {
             </a>
             <a
               className="text-l mx-5 no-underline font-medium text-prim py-2 px-2 hover:bg-whity hover:text-purple-700 hover:scale-105 rounded-md transition duration-150 ease-in-out"
-              href="#C"
+              href="/contact"
             >
               {t('navbar.contact')}
             </a>
             <a
               className="text-l mx-5 no-underline font-medium text-prim py-2 px-2 hover:bg-whity hover:text-purple-700 hover:scale-105 rounded-md transition duration-150 ease-in-out"
-              href="#B"
+              href="/blog"
             >
               {t('navbar.blog')}
             </a>
@@ -156,6 +156,7 @@ function Footer() {
         )}
 
         <select
+        data-testid="language-select"
           id="mySelect"
           className="bg-white border sm:h-12 h-12 border-prim  md:text-gray500 text-sm rounded-3xl focus:ring-blue-500 focus:border-blue-500 block w-64 p-2 px-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray500 dark:focus:ring-blue-500 dark:focus:border-blue-500"
           onChange={(e) => {

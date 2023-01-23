@@ -2,7 +2,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import './index.css';
 import data from '../../utils/data';
-import Card from '../Card';
+import Card from '../Card/Card';
 import Avatar from '../Avatar';
 import { Link } from 'react-router-dom';
 
