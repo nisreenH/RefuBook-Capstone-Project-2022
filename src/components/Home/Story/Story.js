@@ -1,8 +1,19 @@
 import React from 'react';
-import pic from './image.jpg';
+// import pic from './image.jpg';
 import { useTranslation } from 'react-i18next';
+import { useState, useEffect } from 'react';
+import { onSnapshot, collection } from 'firebase/firestore';
+import { db } from '../../../firebase';
 
 function Story(props) {
+  const [blogs, setBlogs] = useState(null);
+  useEffect(() => {
+    const unsubscribe = onSnapshot(collection(db, 'blogs'), (snapshot) => {
+      setBlogs(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    });
+
+    return unsubscribe;
+  }, []);
   // const {label} = props;
   const { t } = useTranslation();
   return (
@@ -16,7 +27,29 @@ function Story(props) {
         </p>
       </header>
 
-      <div className="md:flex items-center p-12 gap-14 text-left text-white">
+      {blogs
+        ? blogs.slice(0, 2).map((ele) => {
+            return (
+              <div>
+                <div>
+                  <img src={ele.blogImgUrl} alt={ele.title} />
+                </div>
+                <div>
+                  <label>{ele.categories}</label>
+                  <p>{ele.subTitle}</p>
+                  <div>
+                    <div>
+                      <div></div>
+                      <p>user name</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })
+        : ''}
+
+      {/* <div className="md:flex items-center p-12 gap-14 text-left text-white">
         <div className="w-full">
           <img className="shrink-0 sm:h-full" src={pic} alt="pic" />
         </div>
@@ -39,9 +72,9 @@ function Story(props) {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="md:flex items-center p-12 gap-14 text-left text-white">
+      {/* <div className="md:flex items-center p-12 gap-14 text-left text-white">
         <div className="w-full">
           <img className="shrink-0 sm:h-full" src={pic} alt="pic" />
         </div>
@@ -64,7 +97,7 @@ function Story(props) {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
