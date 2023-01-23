@@ -7,11 +7,13 @@ function Story(props) {
   const { t } = useTranslation();
   return (
     <div className="bg-prim px-20">
-      <header className="text-white items-center text-justify pt-14 w-96 ">
-        <h1 className="text-4xl font-normal sans-Roboto leading-10 pb-2">
+      <header className="text-white flex flex-col text-left gap-2 items-start pt-14 w-auto sans-Roboto ">
+        <h1 className="text-4xl font-normal sans-Roboto md:text-5xl">
           {t('home.stories-section.title')}
         </h1>
-        <p className="">{t('home.stories-section.subtitle')} </p>
+        <p className="bg-red-300 text-md md:text-lg lg:text-xl">
+          {t('home.stories-section.subtitle')}
+        </p>
       </header>
 
       <div className="md:flex items-center p-12 gap-14 text-left text-white">

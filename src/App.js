@@ -12,12 +12,12 @@ import UserProfile from './components/userProfile';
 import About from './components/about/About';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Footer from './components/Footer/Footer';
+// import Footer from './components/Footer/Footer';
 import UpdateUserProfile from './components/userProfile/UpdateUserProfile';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App ">
       <AuthContextProvider>
         <Navbar />
         <Routes>
@@ -34,7 +34,7 @@ function App() {
             element={<UpdateUserProfile />}
           />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </AuthContextProvider>
     </div>
   );

@@ -3,19 +3,19 @@ import { useTranslation } from 'react-i18next';
 export default function Header() {
   const { t } = useTranslation();
   return (
-    <div className="px-6 py-12 md:px-12 bg-gray-50 text-gray-800 text-center lg:text-left">
+    <div className="px-6 py-12 mb-32 h-auto flex items-center justify-center md:px-12 bg-gray-50  text-gray-800 text-center lg:text-left">
       <div className="container mx-auto xl:px-32">
-        <div className="grid lg:grid-cols-2 gap-12 flex items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="mt-12 lg:mt-0 lg:text-left">
-            <h1 className="text-prim text-7xl font-black">
+            <h1 className="text-prim md:text-7xl font-black text-5xl">
               {' '}
               {t('home.hero.appTitle')}
             </h1>
-            <h3 className="text-lightRed text-6xl font-medium">
+            <h3 className="text-lightRed md:text-6xl font-medium text-5xl mb-9">
               {t('home.hero.subtitle1')} <br /> {t('home.hero.subtitle2')}
             </h3>
-            <p className="text-gray-500">{t('home.hero.content')}</p>
-            <button className="bg-prim px-4 py-2 rounded-full text-white font-medium">
+            <p className="text-gray-500 mb-4">{t('home.hero.content')}</p>
+            <button className="bg-prim px-4 py-2 rounded-full text-white font-medium md:text-lg hover:-translate-y-1 hover:shadow-lg shadow-sky-600 transform-all duration-500">
               {t('home.hero.button')}
             </button>
           </div>

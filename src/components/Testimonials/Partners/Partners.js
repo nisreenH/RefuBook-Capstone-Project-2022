@@ -52,26 +52,54 @@ export const OurProductsCarouselSettings = {
 };
 
 export const ourPartnersInfo = [
-  <div>
-    <img alt="Partner" className=" w-1/2 mx-auto" src={Seven} />
+  <div className="flex items-center content-center bg-red-300">
+    <img
+      alt="Partner"
+      className="self-center object-center w-64 content-center bg-red-300"
+      src={Seven}
+    />
   </div>,
-  <div>
-    <img alt="Partner" className=" w-1/2 mx-auto" src={Six} />
+  <div className="flex items-center content-center bg-red-300">
+    <img
+      alt="Partner"
+      className="self-center object-center w-64 content-center "
+      src={Six}
+    />
   </div>,
-  <div>
-    <img alt="Partner" className=" w-1/2 mx-auto" src={Five} />
+  <div className="flex items-center content-center bg-red-300">
+    <img
+      alt="Partner"
+      className="self-center object-center w-64 content-center "
+      src={Five}
+    />
   </div>,
-  <div>
-    <img alt="Partner" className=" w-1/2 mx-auto" src={Four} />
+  <div className="flex items-center content-center bg-red-300">
+    <img
+      alt="Partner"
+      className="self-center object-center w-64 content-center "
+      src={Four}
+    />
   </div>,
-  <div>
-    <img alt="Partner" className=" w-1/2 mx-auto" src={Three} />
+  <div className="flex items-center content-center bg-red-300">
+    <img
+      alt="Partner"
+      className="self-center object-center w-64 content-center "
+      src={Three}
+    />
   </div>,
-  <div>
-    <img alt="Partner" className=" w-1/2 mx-auto" src={Two} />
+  <div className="flex items-center content-center bg-red-300">
+    <img
+      alt="Partner"
+      className="self-center object-center w-64 content-center "
+      src={Two}
+    />
   </div>,
-  <div>
-    <img alt="Partner" className=" w-1/2 mx-auto" src={One} />
+  <div className="flex items-center content-center bg-red-300">
+    <img
+      alt="Partner"
+      className="self-center object-center w-64 content-center "
+      src={One}
+    />
   </div>,
 ];
 export const testimonialsInfo = [
