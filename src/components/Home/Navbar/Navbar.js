@@ -126,7 +126,6 @@ export default function Navbar() {
                   {t('navbar.blog')}
                 </Link>
               </li>
-
               <li>
                 <Link
                   to="/Contact"

@@ -10,10 +10,11 @@ import { auth } from '../firebase';
 import { doc, setDoc } from 'firebase/firestore';
 import { db } from '../firebase';
 import { useCallback } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
+  const navigate = useNavigate();
   const [user, setUser] = useState({});
 
   const googleSignIn = () => {
@@ -24,19 +25,24 @@ export const AuthContextProvider = ({ children }) => {
 
   const logOut = () => {
     signOut(auth);
+    navigate('/');
   };
 
   const handleUser = useCallback(async () => {
     // Add a new document in collection "users"
+    const fullName = user.displayName.split(' ');
     await setDoc(doc(db, 'users', user.uid), {
       userId: user.uid,
       userName: user.displayName,
+      firstName: fullName[0],
+      lastName: fullName[1],
       email: user.email,
       profilePic: user.photoURL,
       bio: '',
       location: '',
     });
   }, [user]);
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -46,9 +52,14 @@ export const AuthContextProvider = ({ children }) => {
       unsubscribe();
     };
   }, []);
+
   useEffect(() => {
-    user ? handleUser() : console.log('user', user);
-  }, [user, handleUser]);
+    handleUser();
+  }, [handleUser]);
+
+  // useEffect(() => {
+  //   user ? handleUser() : console.log('user', user);
+  // }, [user]);
 
   return (
     <AuthContext.Provider value={{ googleSignIn, logOut, user }}>
