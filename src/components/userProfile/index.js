@@ -9,6 +9,7 @@ import { collection, getDocs, query, where } from 'firebase/firestore';
 import Carousel from 'react-elastic-carousel';
 import Spinner from '../spinner/Spinner';
 import { UserAuth } from '../../context/authContext';
+import { BsFillPencilFill } from 'react-icons/bs';
 
 const UserProfile = () => {
   const { user } = UserAuth();
@@ -84,10 +85,17 @@ const UserProfile = () => {
         />
         <Link to={'/user-profile/update-profile'}>
           <div
-            className="absolute bottom-12 right-4 rounded-full  "
-            style={{ backgroundColor: '#4699C2' }}
+            className="absolute bottom-12 right-4 rounded-full"
+            style={{
+              backgroundColor: '#4699C2',
+              width: '40px',
+              height: '40px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
           >
-            <div className="updateIcon "></div>
+            <BsFillPencilFill size={20} color="white" />
           </div>
         </Link>
       </div>
@@ -105,18 +113,6 @@ const UserProfile = () => {
           <Card props={blogs[key]} key={key} blogId={key} />
         ))}
       </Carousel>
-
-      {/* <Slider {...settings}> */}
-
-      {/* {Object.keys(blogs).map((key) => (
- 
-          <Card props={blogs[key]} key={key} blogId={key} />
-          // <div>
-          //   <h1> {blogs[key].BlogTitle}</h1>
-          // </div>
-  
-  ))} */}
-      {/* </Slider> */}
     </div>
   ) : (
     <Spinner />

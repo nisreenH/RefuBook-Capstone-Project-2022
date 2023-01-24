@@ -1,11 +1,14 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { UserAuth } from '../../context/authContext';
 import { useNavigate } from 'react-router-dom';
+import { db } from '../../firebase';
+import { doc, getDoc } from 'firebase/firestore';
 const Index = ({ width, height, margin, isOpenNav }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const { user, logOut } = UserAuth();
+  const [profilePic, setProfileUrl] = useState('');
   const navigate = useNavigate();
   const isClickProfile = () => {
     setIsOpen(!isOpen);
@@ -19,13 +22,20 @@ const Index = ({ width, height, margin, isOpenNav }) => {
       console.log(error);
     }
   };
-
+  useEffect(() => {
+    const getUserAsyncFv = async () => {
+      const docRef = doc(db, 'users', user.uid);
+      const data = await getDoc(docRef);
+      setProfileUrl(data.data().profilePic);
+    };
+    getUserAsyncFv();
+  }, [user]);
   return (
     <Fragment>
       <div class=" " style={{ cursor: 'pointer' }}>
         <img
           class="w-10 h-10 rounded-full profile_picture"
-          src={`${user.photoURL}`}
+          src={`${profilePic}`}
           alt=""
           style={{ width, height, margin }}
           onClick={() => isClickProfile()}
