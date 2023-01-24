@@ -32,7 +32,7 @@ function Testimonials() {
   const { t } = useTranslation();
   return (
     <div className="my-16 mb-32">
-      <h2 className="capitalize text-center text-prim font-bold text-3xl mb-10 md:mb-0 xl:pt-20 sm:pt-10">
+      <h2 className="capitalize text-center text-prim font-bold text-3xl mb-10 xl:pt-20 sm:pt-10">
         {t('home.testimonials.global-texts.testimonial-title')}
       </h2>
       <div className="flex flex-col xl:flex-row justify-around items-center gap-16 py-8 lg:py-24">

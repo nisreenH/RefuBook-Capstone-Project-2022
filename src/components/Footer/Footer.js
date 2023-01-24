@@ -168,12 +168,11 @@ function Footer() {
           </div> */}
       </div>
 
-      <form className="flex flex-row items-center gap-6">
+      <form className="flex flex-row items-center justify-center gap-6 ">
         {user?.displayName ? (
           <button
             type="button"
-            className="bg-prim  text-whity
-               text-sm rounded-3xl h-12 w-64 p-2"
+            className="bg-prim px-4 md:px-8 py-2 rounded-full text-white font-medium md:text-lg shadow-lg shadow-sky-600"
             onClick={handleSignOut}
           >
             {t('navbar.logOut')}
@@ -182,8 +181,7 @@ function Footer() {
           <Link to="/signup">
             <button
               type="button"
-              className="bg-prim  text-whity
-                text-sm rounded-3xl h-12 w-64 p-2 mx-5"
+              className="bg-prim px-4 md:px-8 py-2 rounded-full text-white font-medium md:text-lg shadow-lg shadow-sky-600"
             >
               {t('navbar.signUp')}
             </button>
@@ -192,7 +190,7 @@ function Footer() {
 
         <select
           id="mySelect"
-          className="bg-white border sm:h-12 h-12 border-prim  md:text-gray500 text-sm rounded-3xl focus:ring-blue-500 focus:border-blue-500 block w-64 p-2 px-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray500 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          className="bg-white px-4 py-2 rounded-full border-2 border-prim text-prim font-medium md:text-lg shadow-lg shadow-sky-600"
           onChange={(e) => {
             sessionStorage.setItem('selectedOption', e.target.value);
             return changeLang(e.target.value);
