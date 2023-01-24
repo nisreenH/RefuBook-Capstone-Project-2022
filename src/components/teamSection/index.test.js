@@ -12,13 +12,13 @@ describe('TeamSection', () => {
       </I18nextProvider>
     );
 
-    expect(screen.getByText("Team Heading")).toBeInTheDocument();
-    expect(screen.getByText("Country1")).toBeInTheDocument();
-    expect(screen.getByText("Country2")).toBeInTheDocument();
-    expect(screen.getByText("Country3")).toBeInTheDocument();
-    expect(screen.getByText("Country4")).toBeInTheDocument();
-    expect(screen.getByText("Team Member 1")).toBeInTheDocument();
-    expect(screen.getByText("Team Member 2")).toBeInTheDocument();
+    expect(screen.getByText('Team Heading')).toBeInTheDocument();
+    expect(screen.getByText('Country1')).toBeInTheDocument();
+    expect(screen.getByText('Country2')).toBeInTheDocument();
+    expect(screen.getByText('Country3')).toBeInTheDocument();
+    expect(screen.getByText('Country4')).toBeInTheDocument();
+    expect(screen.getByText('Team Member 1')).toBeInTheDocument();
+    expect(screen.getByText('Team Member 2')).toBeInTheDocument();
     //...and so on for all the team members' names
   });
 });

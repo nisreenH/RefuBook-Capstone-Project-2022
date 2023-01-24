@@ -87,7 +87,7 @@ const UserProfileEdit = (props) => {
           </div>
 
           <div className="w-full">
-          <label
+            <label
               htmlFor="userName"
               className="block text-blue-700 text-sm font-bold mb-2"
             >
@@ -155,7 +155,8 @@ const UserProfileEdit = (props) => {
         </form>
       </div>
     </div>
-  )
-  : (<Spinner />)
+  ) : (
+    <Spinner />
+  );
 };
 export default UserProfileEdit;

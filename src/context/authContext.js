@@ -30,33 +30,32 @@ export const AuthContextProvider = ({ children }) => {
   };
 
   const handleUser = useCallback(async () => {
-    if(user){
-    const fullName = user.displayName.split(' ');
-    await setDoc(doc(db, 'users', user.uid), {
-      userId: user.uid,
-      userName: user.displayName,
-      firstName: fullName[0],
-      lastName: fullName[1],
-      email: user.email,
-      profilePic: user.photoURL,
-      bio: '',
-      location: '',
-    });
-  }
+    if (user) {
+      const fullName = user.displayName.split(' ');
+      await setDoc(doc(db, 'users', user.uid), {
+        userId: user.uid,
+        userName: user.displayName,
+        firstName: fullName[0],
+        lastName: fullName[1],
+        email: user.email,
+        profilePic: user.photoURL,
+        bio: '',
+        location: '',
+      });
+    }
   }, [user]);
 
   useEffect(() => {
     if (user) {
-      onSnapshot(doc(db, "users", user.uid), (doc) => {
-          if(doc.data()){
-            console.log("there is a user");
-          } else{
-            handleUser();
-          }
-    })
-  }
-  }, [user,handleUser]);
-
+      onSnapshot(doc(db, 'users', user.uid), (doc) => {
+        if (doc.data()) {
+          console.log('there is a user');
+        } else {
+          handleUser();
+        }
+      });
+    }
+  }, [user, handleUser]);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -67,7 +66,6 @@ export const AuthContextProvider = ({ children }) => {
       unsubscribe();
     };
   }, []);
-
 
   return (
     <AuthContext.Provider value={{ googleSignIn, logOut, user }}>

@@ -11,7 +11,7 @@ describe('Signup', () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByText("Already a member?")).toBeInTheDocument();
-    expect(screen.getByText("Sign in")).toBeInTheDocument();
+    expect(screen.getByText('Already a member?')).toBeInTheDocument();
+    expect(screen.getByText('Sign in')).toBeInTheDocument();
   });
 });

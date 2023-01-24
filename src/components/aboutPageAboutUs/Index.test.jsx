@@ -1,9 +1,6 @@
-
 import OurStory from './Index';
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-
-
 
 jest.mock('react-i18next', () => ({
   useTranslation: () => ({
@@ -20,4 +17,3 @@ describe('OurStory component', () => {
     expect(container.firstChild).toBeInTheDocument();
   });
 });
-

@@ -16,19 +16,19 @@ const UserProfile = () => {
   const [blogs, setBlogs] = useState({});
   useEffect(() => {
     async function fetchUserBlogs() {
-      if(user){
-      const q = query(
-        collection(db, 'blogs'),
-        where('userId', '==', `${user.uid}`)
-      );
-      const querySnapshot = await getDocs(q);
-      querySnapshot.forEach((doc) => {
-        setBlogs((prevState) => ({
-          ...prevState,
-          [doc.id]: doc.data(),
-        }));
-      });
-    }
+      if (user) {
+        const q = query(
+          collection(db, 'blogs'),
+          where('userId', '==', `${user.uid}`)
+        );
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+          setBlogs((prevState) => ({
+            ...prevState,
+            [doc.id]: doc.data(),
+          }));
+        });
+      }
     }
     fetchUserBlogs();
   }, [user]);
@@ -118,7 +118,9 @@ const UserProfile = () => {
   ))} */}
       {/* </Slider> */}
     </div>
-  ) : (<Spinner />)
+  ) : (
+    <Spinner />
+  );
 };
 
 export default UserProfile;
