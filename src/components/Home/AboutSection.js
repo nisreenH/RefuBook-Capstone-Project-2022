@@ -1,71 +1,135 @@
 import React from 'react';
 import './About.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircle, faCircleDot } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faCircle, faCircleDot } from '@fortawesome/free-solid-svg-icons';
 import imageSrc from '../../assets/photoCopy.png';
 import { useTranslation } from 'react-i18next';
+import Carousel from 'react-elastic-carousel';
+import { useNavigate } from 'react-router-dom';
 
 const About = () => {
+  const navigate = useNavigate();
   const { t } = useTranslation();
-
+  const breakPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 550, itemsToShow: 2 },
+    { width: 760, itemsToShow: 3 },
+    { width: 1200, itemsToShow: 4 },
+  ];
+  function handleRedirection() {
+    navigate(`/about`);
+  }
   return (
-    <div className="container_style">
-      <div className="main container">
-        <div className="text_section">
-          <h1>{t('home.about-section.title')}</h1>
-          <p>{t('home.about-section.content')}</p>
+    <div className="w-auto mb-24">
+      <div className="flex flex-col items-center gap-4 lg:px-32">
+        <div className="mx-4 my-3 flex flex-col gap-3 items-center">
+          <h2 className="text-prim text-4xl">
+            {t('home.about-section.title')}
+          </h2>
+          <p className="text-lg md:text-xl">
+            {t('home.about-section.content')}
+          </p>
           <button
             type="button"
-            className="custom_button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+            onClick={handleRedirection}
+            className="bg-prim px-4 py-2 rounded-full text-white font-medium md:text-lg hover:-translate-y-1 hover:shadow-lg shadow-sky-600 transform-all duration-500"
           >
             {t('home.about-section.button')}
           </button>
         </div>
-        <div className="grid_contents">
+        <div className="flex flex-col md:flex-row-reverse md:gap-32 items-center justify-center w-full">
           <img src={imageSrc} alt="person in mobile" />
-          <div className="grid_items">
-            <div style={{ display: 'flex' }}>
-              <div className="grit_item_row1">
-                <div className="grid_item">
+          <div className="w-96 ">
+            <Carousel
+              showArrows={false}
+              breakPoints={breakPoints}
+              className="w-auto"
+              autoPlay={true}
+              infiniteLoop={true}
+            >
+              <div className="">
+                <div className="flex items-center gap-2 justify-center font-bold">
+                  <h1 className="">{t('home.featuresTitle.reliability')}</h1>
+                </div>
+                <p className="text-lg">
+                  {t('home.featuresContent.reliability')}
+                </p>
+              </div>
+              {/*  */}
+              <div className="">
+                <div className="flex items-center gap-2 justify-center font-bold">
+                  <h1>{t('home.featuresTitle.motivation')}</h1>
+                </div>
+                <p className="text-lg">
+                  {t('home.featuresContent.motivation')}
+                </p>
+              </div>
+              {/*  */}
+              <div className="">
+                <div className="flex items-center gap-2 justify-center font-bold">
+                  <h1>{t('home.featuresTitle.efficiency')}</h1>
+                </div>
+                <p className="text-lg">
+                  {t('home.featuresContent.efficiency')}
+                </p>
+              </div>
+              {/*  */}
+              <div className="">
+                <div className="flex items-center gap-2 justify-center font-bold">
+                  <h1>{t('home.featuresTitle.creativity')}</h1>
+                </div>
+                <p className="text-lg">
+                  {t('home.featuresContent.creativity')}
+                </p>
+              </div>
+            </Carousel>
+          </div>
+
+          {/* <div className="grid_items bg-blue-300">
+           
+            <div>
+              <div className="grit_item_row1"> */}
+          {/* <div className="grid_item">
                   <div className="grid_header">
-                    <i className="fa-duotone fa-circle-star" />
                     <FontAwesomeIcon icon={faCircleDot} />
-                    <h1>{t('home.featuresTitle.reliability')}</h1>
+                    <h1 className="font-bold">
+                      {t('home.featuresTitle.reliability')}
+                    </h1>
                   </div>
                   <p>{t('home.featuresContent.reliability')}</p>
-                </div>
-                <div className="grid_item dsNone">
+                </div> */}
+          {/* <div className="grid_item dsNone">
                   <div className="grid_header">
                     <FontAwesomeIcon icon={faCircle} />
                     <h1>{t('home.featuresTitle.motivation')}</h1>
                   </div>
                   <p>{t('home.featuresContent.motivation')}</p>
-                </div>
-              </div>
-              <div className="grit_item_row2 dsNone">
-                <div className="grid_item">
+                </div> */}
+          {/* </div>
+              <div className="grit_item_row2 dsNone"> */}
+          {/* <div className="grid_item">
                   <div className="grid_header">
                     <FontAwesomeIcon icon={faCircle} />
                     <h1>{t('home.featuresTitle.efficiency')}</h1>
                   </div>
                   <p>{t('home.featuresContent.efficiency')}</p>
-                </div>
-                <div className="grid_item">
+                </div> */}
+          {/* <div className="grid_item">
                   <div className="grid_header">
                     <FontAwesomeIcon icon={faCircle} />
                     <h1>{t('home.featuresTitle.creativity')}</h1>
                   </div>
                   <p>{t('home.featuresContent.creativity')}</p>
-                </div>
-              </div>
-            </div>
-            <div className="dots">
+                </div> */}
+          {/* </div>
+            </div> */}
+          {/* <div className="dots">
               <div className="circle-dot-fill"></div>
               <div className="circle-dot ml-1"></div>
               <div className="circle-dot ml-1"></div>
               <div className="circle-dot ml-1"></div>
-            </div>
-          </div>
+            </div> */}
+          {/* </div> */}
         </div>
       </div>
     </div>

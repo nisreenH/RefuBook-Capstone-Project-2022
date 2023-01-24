@@ -11,11 +11,12 @@ export default function Navbar() {
   const { t } = useTranslation();
 
   return (
-    <nav className="w-full   bg-white-500 bg-opacity-0 ">
-      <div className="justify-between   mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+    <nav className=" md:mb-0">
+      <div className="justify-between items-center mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
-          <div className="flex items-center justify-between md:py-5 md:block">
-            <p className="flex items-center gap-3">
+          <div className="flex items-center justify-between md:py-5 md:block ml-3">
+            {/* LOGO DIV */}
+            <div className="flex items-center gap-3">
               <svg
                 width="25"
                 height="25"
@@ -48,13 +49,14 @@ export default function Navbar() {
                   fill="#21567E"
                 />
               </svg>
-              <span className="self-center text-xl font-semibold whitespace-nowrap text-prim">
+              <p className="text-2xl font-semibold text-prim mb-0">
                 {t('home.hero.appTitle')}
-              </span>
-            </p>
-            <div className="md:hidden">
+              </p>
+            </div>
+
+            <div className="md:hidden ">
               <button
-                className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
+                className="p-2 text-gray-700 rounded-md m-0 outline-none focus:border-gray-400 focus:border"
                 onClick={() => setNavbar(!navbar)}
                 data-collapse-toggle="navbar-default"
                 type="button"
@@ -95,20 +97,23 @@ export default function Navbar() {
         </div>
         <div>
           <div
-            className={`flex-1 justify-self-center w-full  md:block md:pb-0 md:mt-0 ${
-              navbar ? 'block' : 'hidden'
+            className={`flex-1 justify-self-center w-full  md:block md:pb-0 md:mt-0 transform-all duration-300  ${
+              navbar ? 'block bg-lightgray mt-3' : 'hidden'
             }`}
           >
-            <ul className="text-lightgray flex flex-col p-4 mt-4 items-center justify-center  rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
+            <ul className=" flex flex-col no-underline p-4  items-center gap-4  justify-between rounded-lg md:flex-row md:text-md md:font-medium md:mb-0">
               <li>
-                <Link to="/" className="text-prim font-normal hover:font-bold">
+                <Link
+                  to="/"
+                  className="text-prim font-bold no-underline hover:text-sky-500 transform-bg duration-300 md:ml-4"
+                >
                   {t('navbar.home')}
                 </Link>
               </li>
               <li>
                 <Link
                   to="/about"
-                  className="font-normal hover:font-bold hover:text-gray-300"
+                  className="text-prim font-bold no-underline hover:text-sky-500 transform-bg duration-300 md:ml-4"
                 >
                   {t('navbar.about')}
                 </Link>
@@ -116,7 +121,7 @@ export default function Navbar() {
               <li>
                 <Link
                   to="/blogs"
-                  className="font-normal hover:font-bold hover:text-gray-300"
+                  className="text-prim font-bold no-underline hover:text-sky-500 transform-bg duration-300 md:ml-4"
                 >
                   {t('navbar.blog')}
                 </Link>
@@ -124,7 +129,7 @@ export default function Navbar() {
               <li>
                 <Link
                   to="/Contact"
-                  className="font-normal hover:font-bold hover:text-gray-300"
+                  className="text-prim font-bold no-underline hover:text-sky-500 transform-bg duration-300 md:ml-4"
                 >
                   {t('navbar.contact')}
                 </Link>
@@ -140,7 +145,7 @@ export default function Navbar() {
                 ) : (
                   <Link
                     to="/signup"
-                    className="bg-prim text-white py-1 px-3 rounded-full hover:bg-lightgray "
+                    className="bg-prim text-white py-1 px-3 rounded-full hover:bg-sky-600 hover:shadow-lg no-underline font-bold capitalize transform-all duration-300 md:ml-4 "
                   >
                     {t('navbar.signUp')}
                   </Link>

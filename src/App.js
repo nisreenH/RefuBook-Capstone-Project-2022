@@ -17,7 +17,7 @@ import UpdateUserProfile from './components/userProfile/UpdateUserProfile';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App ">
       <AuthContextProvider>
         <Navbar />
         <Routes>
