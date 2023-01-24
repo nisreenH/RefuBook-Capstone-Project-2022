@@ -3,7 +3,7 @@ import { db } from '../../../firebase';
 import { doc, getDoc } from 'firebase/firestore';
 
 export default function SingleBlogCard({ blogId, props }) {
-  console.log(blogId);
+  // console.log(blogId);
   const [users, setUsers] = useState({});
   useEffect(() => {
     async function fetchUsers() {

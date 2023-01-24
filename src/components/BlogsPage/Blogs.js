@@ -33,7 +33,7 @@ export default function Blogs() {
 
     return unsubscribe;
   }, []);
-  console.log(blogs);
+  // console.log(blogs);
   function handleRedirection() {
     navigate('/signup');
   }
@@ -62,7 +62,7 @@ export default function Blogs() {
   const [selected, setSelected] = useState(null);
 
   const handleSelect = (e) => {
-    console.log('option', e.target.value);
+    // console.log('option', e.target.value);
     setSelected(e.target.value);
   };
   return blogs ? (

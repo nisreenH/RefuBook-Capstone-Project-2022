@@ -8,7 +8,7 @@ describe('Card component', () => {
       BlogTitle: 'Test Title',
       subTitle: 'Test Subtitle',
       blogImgUrl: 'https://example.com/test.jpg',
-      userId: '123'
+      userId: '123',
     };
     const blogId = '456';
     render(<Card props={props} blogId={blogId} />);

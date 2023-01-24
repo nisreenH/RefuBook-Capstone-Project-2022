@@ -7,8 +7,9 @@ import { Link } from 'react-router-dom';
 import { db } from '../../firebase';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import Carousel from 'react-elastic-carousel';
-
+import Spinner from '../spinner/Spinner';
 import { UserAuth } from '../../context/authContext';
+import { BsFillPencilFill } from 'react-icons/bs';
 
 const UserProfile = () => {
   const { user } = UserAuth();
@@ -16,20 +17,22 @@ const UserProfile = () => {
   const [blogs, setBlogs] = useState({});
   useEffect(() => {
     async function fetchUserBlogs() {
-      const q = query(
-        collection(db, 'blogs'),
-        where('userId', '==', `${user.uid}`)
-      );
-      const querySnapshot = await getDocs(q);
-      querySnapshot.forEach((doc) => {
-        setBlogs((prevState) => ({
-          ...prevState,
-          [doc.id]: doc.data(),
-        }));
-      });
+      if (user) {
+        const q = query(
+          collection(db, 'blogs'),
+          where('userId', '==', `${user.uid}`)
+        );
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+          setBlogs((prevState) => ({
+            ...prevState,
+            [doc.id]: doc.data(),
+          }));
+        });
+      }
     }
     fetchUserBlogs();
-  }, [user.uid]);
+  }, [user]);
 
   const breakPoints = [
     { width: 1, itemsToShow: 1 },
@@ -71,7 +74,7 @@ const UserProfile = () => {
   //     },
   //   ],
   // };
-  return (
+  return blogs && user ? (
     <div className="flex justify-center items-center flex-col">
       <div className="userProfile-div relative ">
         <Avatar
@@ -82,10 +85,17 @@ const UserProfile = () => {
         />
         <Link to={'/user-profile/update-profile'}>
           <div
-            className="absolute bottom-12 right-4 rounded-full  "
-            style={{ backgroundColor: '#4699C2' }}
+            className="absolute bottom-12 right-4 rounded-full"
+            style={{
+              backgroundColor: '#4699C2',
+              width: '40px',
+              height: '40px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
           >
-            <div className="updateIcon "></div>
+            <BsFillPencilFill size={20} color="white" />
           </div>
         </Link>
       </div>
@@ -103,19 +113,9 @@ const UserProfile = () => {
           <Card props={blogs[key]} key={key} blogId={key} />
         ))}
       </Carousel>
-
-      {/* <Slider {...settings}> */}
-
-      {/* {Object.keys(blogs).map((key) => (
- 
-          <Card props={blogs[key]} key={key} blogId={key} />
-          // <div>
-          //   <h1> {blogs[key].BlogTitle}</h1>
-          // </div>
-  
-  ))} */}
-      {/* </Slider> */}
     </div>
+  ) : (
+    <Spinner />
   );
 };
 

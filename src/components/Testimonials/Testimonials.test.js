@@ -43,4 +43,3 @@ describe('Testimonials component', () => {
     expect(screen.getByText('Our Partners')).toBeInTheDocument();
   });
 });
-

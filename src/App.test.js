@@ -27,6 +27,5 @@ describe('App component', () => {
     // check blogs route
     const blogs = screen.getByText(/blogs/i);
     expect(blogs).toBeInTheDocument();
-
-  })
-})
+  });
+});
