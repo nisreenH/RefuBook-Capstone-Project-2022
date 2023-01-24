@@ -48,7 +48,6 @@ export const AuthContextProvider = ({ children }) => {
   useEffect(() => {
     if (user) {
       onSnapshot(doc(db, "users", user.uid), (doc) => {
-          console.log("Current data: ", doc.data());
           if(doc.data()){
             console.log("there is a user");
           } else{
@@ -62,7 +61,7 @@ export const AuthContextProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      console.log('User', currentUser);
+      // console.log('User', currentUser);
     });
     return () => {
       unsubscribe();
