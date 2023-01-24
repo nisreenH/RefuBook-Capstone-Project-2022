@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { db } from '../../firebase';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import Carousel from 'react-elastic-carousel';
-
+import Spinner from '../spinner/Spinner';
 import { UserAuth } from '../../context/authContext';
 
 const UserProfile = () => {
@@ -16,6 +16,7 @@ const UserProfile = () => {
   const [blogs, setBlogs] = useState({});
   useEffect(() => {
     async function fetchUserBlogs() {
+      if(user){
       const q = query(
         collection(db, 'blogs'),
         where('userId', '==', `${user.uid}`)
@@ -28,8 +29,9 @@ const UserProfile = () => {
         }));
       });
     }
+    }
     fetchUserBlogs();
-  }, [user.uid]);
+  }, [user]);
 
   const breakPoints = [
     { width: 1, itemsToShow: 1 },
@@ -71,7 +73,7 @@ const UserProfile = () => {
   //     },
   //   ],
   // };
-  return (
+  return blogs && user ? (
     <div className="flex justify-center items-center flex-col">
       <div className="userProfile-div relative ">
         <Avatar
@@ -116,7 +118,7 @@ const UserProfile = () => {
   ))} */}
       {/* </Slider> */}
     </div>
-  );
+  ) : (<Spinner />)
 };
 
 export default UserProfile;

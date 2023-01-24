@@ -4,16 +4,16 @@ import { UserAuth } from '../../context/authContext';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { db } from '../../firebase';
 import { useNavigate } from 'react-router-dom';
+import Spinner from '../spinner/Spinner';
 
 const UserProfileEdit = (props) => {
   const navigate = useNavigate();
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
-  const [username, setUsername] = useState('');
+  const [userName, setUsername] = useState('');
   const [bio, setBio] = useState('');
   const [location, setLocation] = useState('');
   const [isClicked, setIsClicked] = useState(false);
-  console.log(username);
   const { user } = UserAuth();
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const UserProfileEdit = (props) => {
       setLocation(data.data().location);
     };
     getUserAsyncFv();
-  }, [user.uid, isClicked]);
+  }, [user, isClicked]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,6 +35,7 @@ const UserProfileEdit = (props) => {
     await updateDoc(docRef, {
       firstName,
       lastName,
+      userName,
       bio,
       location,
     }).then(() => {
@@ -43,7 +44,7 @@ const UserProfileEdit = (props) => {
     });
   };
 
-  return (
+  return user ? (
     <div className=" h-screen flex flex-col items-center justify-center">
       <div className="relative md:mb-16 mb-8 flex flex-col items-end w-48">
         <Avatar width="8rem" height="8rem" margin="0" />
@@ -86,6 +87,21 @@ const UserProfileEdit = (props) => {
           </div>
 
           <div className="w-full">
+          <label
+              htmlFor="userName"
+              className="block text-blue-700 text-sm font-bold mb-2"
+            >
+              Location
+            </label>
+            <input
+              required
+              type="text"
+              name="userName"
+              value={userName}
+              onChange={(e) => setUsername(e.target.value)}
+              className=" shadow appearance-none border rounded w-full mb-4 py-2 px-3 text-blue-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+
             <label
               htmlFor="biography"
               className="block text-blue-700 text-sm font-bold mb-2"
@@ -139,6 +155,7 @@ const UserProfileEdit = (props) => {
         </form>
       </div>
     </div>
-  );
+  )
+  : (<Spinner />)
 };
 export default UserProfileEdit;

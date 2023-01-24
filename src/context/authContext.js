@@ -7,15 +7,16 @@ import {
   onAuthStateChanged,
 } from 'firebase/auth';
 import { auth } from '../firebase';
-import { doc, setDoc } from 'firebase/firestore';
+import { doc, setDoc, onSnapshot } from 'firebase/firestore';
 import { db } from '../firebase';
 import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const navigate = useNavigate();
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(null);
 
   const googleSignIn = () => {
     const provider = new GoogleAuthProvider();
@@ -29,7 +30,7 @@ export const AuthContextProvider = ({ children }) => {
   };
 
   const handleUser = useCallback(async () => {
-    // Add a new document in collection "users"
+    if(user){
     const fullName = user.displayName.split(' ');
     await setDoc(doc(db, 'users', user.uid), {
       userId: user.uid,
@@ -41,7 +42,22 @@ export const AuthContextProvider = ({ children }) => {
       bio: '',
       location: '',
     });
+  }
   }, [user]);
+
+  useEffect(() => {
+    if (user) {
+      onSnapshot(doc(db, "users", user.uid), (doc) => {
+          console.log("Current data: ", doc.data());
+          if(doc.data()){
+            console.log("there is a user");
+          } else{
+            handleUser();
+          }
+    })
+  }
+  }, [user,handleUser]);
+
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -53,13 +69,6 @@ export const AuthContextProvider = ({ children }) => {
     };
   }, []);
 
-  useEffect(() => {
-    handleUser();
-  }, [handleUser]);
-
-  // useEffect(() => {
-  //   user ? handleUser() : console.log('user', user);
-  // }, [user]);
 
   return (
     <AuthContext.Provider value={{ googleSignIn, logOut, user }}>
