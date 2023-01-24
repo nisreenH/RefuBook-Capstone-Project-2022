@@ -4,7 +4,9 @@ import { UserAuth } from '../../context/authContext';
 import { useNavigate } from 'react-router-dom';
 import { db } from '../../firebase';
 import { doc, getDoc } from 'firebase/firestore';
+import { useTranslation } from 'react-i18next';
 const Index = ({ width, height, margin, isOpenNav }) => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
 
   const { user, logOut } = UserAuth();
@@ -75,7 +77,7 @@ const Index = ({ width, height, margin, isOpenNav }) => {
                     ></path>
                   </svg>
                 </div>
-                Profile
+                {t('userProfile.avatar.profile')}
               </Link>
             </li>
             <li className="font-medium">
@@ -106,7 +108,7 @@ const Index = ({ width, height, margin, isOpenNav }) => {
                     ></path>
                   </svg>
                 </div>
-                Edit Profile
+                {t('userProfile.avatar.editProfile')}
               </Link>
             </li>
             <hr className="dark:border-gray-700" />
@@ -131,7 +133,7 @@ const Index = ({ width, height, margin, isOpenNav }) => {
                     ></path>
                   </svg>
                 </div>
-                Logout
+                {t('userProfile.avatar.logOut')}
               </Link>
             </li>
           </ul>

@@ -6,8 +6,10 @@ import { db } from '../../firebase';
 import { useNavigate } from 'react-router-dom';
 import Spinner from '../spinner/Spinner';
 import { AiFillCamera } from 'react-icons/ai';
+import { useTranslation } from 'react-i18next';
 
 const UserProfileEdit = (props) => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -87,7 +89,7 @@ const UserProfileEdit = (props) => {
               htmlFor="userImage"
               className="block text-blue-700 text-sm font-bold mb-2"
             >
-              Profile Url
+              {t('userProfile.edit.image')}
             </label>
             <input
               type="text"
@@ -105,7 +107,7 @@ const UserProfileEdit = (props) => {
                 htmlFor="first name"
                 className="block text-blue-700 text-sm font-bold mb-2"
               >
-                First Name
+                {t('userProfile.edit.firstName')}
               </label>
               <input
                 required
@@ -121,7 +123,7 @@ const UserProfileEdit = (props) => {
                 htmlFor="last name"
                 className="block text-blue-700 text-sm font-bold mb-2"
               >
-                Last Name
+                {t('userProfile.edit.lastName')}
               </label>
               <input
                 required
@@ -139,7 +141,7 @@ const UserProfileEdit = (props) => {
               htmlFor="userName"
               className="block text-blue-700 text-sm font-bold mb-2"
             >
-              Username
+              {t('userProfile.edit.username')}
             </label>
             <input
               required
@@ -154,7 +156,7 @@ const UserProfileEdit = (props) => {
               htmlFor="biography"
               className="block text-blue-700 text-sm font-bold mb-2"
             >
-              Biography
+              {t('userProfile.edit.biography')}
             </label>
             <textarea
               onChange={(e) => setBio(e.target.value)}
@@ -170,7 +172,7 @@ const UserProfileEdit = (props) => {
               htmlFor="location"
               className="block text-blue-700 text-sm font-bold mb-2"
             >
-              Location
+              {t('userProfile.edit.location')}
             </label>
             <input
               required
@@ -187,7 +189,7 @@ const UserProfileEdit = (props) => {
               className="uppercase md:text-base text-sm bg-blue-500 hover:bg-blue-700 text-white font-bold mt-4 mr-4 py-2 md:px-12 px-6 rounded-full focus:outline-none focus:shadow-outline"
               type="submit"
             >
-              Save
+              {t('userProfile.edit.save')}
             </button>
             <button
               className="uppercase md:text-base text-sm bg-transparent border-solid border-2 border-blue-500 text-blue-500 hover:bg-blue-700 hover:text-white font-bold mt-4 py-2 md:px-6 px-4 rounded-full focus:outline-none focus:shadow-outline"
@@ -197,7 +199,7 @@ const UserProfileEdit = (props) => {
                 setIsClicked(!isClicked);
               }}
             >
-              Cancel
+              {t('userProfile.edit.cancel')}
             </button>
           </div>
         </form>
