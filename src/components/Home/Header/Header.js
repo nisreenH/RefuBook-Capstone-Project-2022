@@ -1,10 +1,16 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { UserAuth } from '../../../context/authContext';
+import { useNavigate } from 'react-router-dom';
 
 export default function Header() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+
   const { user } = UserAuth();
+  function handleRedirection() {
+    navigate(`/signup`);
+  }
   return (
     <div className="px-6 py-12 mb-32 h-auto flex items-center justify-center md:px-12 bg-gray-50  text-gray-800 text-center lg:text-left">
       <div className="container mx-auto xl:px-32">
@@ -20,7 +26,10 @@ export default function Header() {
 
             <p className="text-gray-500 mb-4">{t('home.hero.content')}</p>
             {!user ? (
-              <button className="bg-prim px-4 py-2 rounded-full text-white font-medium md:text-lg hover:-translate-y-1 hover:shadow-lg shadow-sky-600 transform-all duration-500">
+              <button
+                onClick={handleRedirection}
+                className="bg-prim px-4 py-2 rounded-full text-white font-medium md:text-lg hover:-translate-y-1 hover:shadow-lg shadow-sky-600 transform-all duration-500"
+              >
                 {t('home.hero.button')}
               </button>
             ) : (

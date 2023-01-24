@@ -5,8 +5,10 @@ import './About.css';
 import imageSrc from '../../assets/photoCopy.png';
 import { useTranslation } from 'react-i18next';
 import Carousel from 'react-elastic-carousel';
+import { useNavigate } from 'react-router-dom';
 
 const About = () => {
+  const navigate = useNavigate();
   const { t } = useTranslation();
   const breakPoints = [
     { width: 1, itemsToShow: 1 },
@@ -14,6 +16,9 @@ const About = () => {
     { width: 760, itemsToShow: 3 },
     { width: 1200, itemsToShow: 4 },
   ];
+  function handleRedirection() {
+    navigate(`/about`);
+  }
   return (
     <div className="w-auto mb-24">
       <div className="flex flex-col items-center gap-4 lg:px-32">
@@ -26,6 +31,7 @@ const About = () => {
           </p>
           <button
             type="button"
+            onClick={handleRedirection}
             className="bg-prim px-4 py-2 rounded-full text-white font-medium md:text-lg hover:-translate-y-1 hover:shadow-lg shadow-sky-600 transform-all duration-500"
           >
             {t('home.about-section.button')}
