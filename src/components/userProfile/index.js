@@ -5,7 +5,14 @@ import Card from '../Card/index';
 import Avatar from '../Avatar';
 import { Link } from 'react-router-dom';
 import { db } from '../../firebase';
-import { collection, getDocs, query, where } from 'firebase/firestore';
+import {
+  collection,
+  getDocs,
+  query,
+  where,
+  doc,
+  getDoc,
+} from 'firebase/firestore';
 import Carousel from 'react-elastic-carousel';
 import Spinner from '../spinner/Spinner';
 import { UserAuth } from '../../context/authContext';
@@ -15,6 +22,8 @@ const UserProfile = () => {
   const { user } = UserAuth();
 
   const [blogs, setBlogs] = useState({});
+  const [userName, setUsername] = useState('');
+
   useEffect(() => {
     async function fetchUserBlogs() {
       if (user) {
@@ -32,6 +41,15 @@ const UserProfile = () => {
       }
     }
     fetchUserBlogs();
+  }, [user]);
+
+  useEffect(() => {
+    const getUserAsyncFv = async () => {
+      const docRef = doc(db, 'users', user.uid);
+      const data = await getDoc(docRef);
+      setUsername(data.data().userName);
+    };
+    getUserAsyncFv();
   }, [user]);
 
   const breakPoints = [
@@ -100,7 +118,7 @@ const UserProfile = () => {
         </Link>
       </div>
 
-      <h2>{user.displayName}</h2>
+      <h2>{userName}</h2>
 
       <Carousel
         showArrows={false}
