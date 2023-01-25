@@ -4,7 +4,7 @@ import Footer from './Footer';
 import { UserAuth } from '../../context/authContext';
 import { i18next } from 'i18next';
 import { db } from '../../firebase';
-import { Firestore } from 'firebase/firestore';
+// import { Firestore } from 'firebase/firestore';
 
 jest.mock('i18next', () => ({
   changeLanguage: jest.fn(),

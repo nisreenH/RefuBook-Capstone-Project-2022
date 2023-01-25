@@ -196,11 +196,8 @@ function Footer() {
             return changeLang(e.target.value);
           }}
         >
-          {languages.map(({ code, name, country_code, Flag }) => (
+          {languages.map(({ code, name, country_code }) => (
             <option value={code} key={country_code}>
-              {/* <span className=" mx-2"> <Flag /> </span> */}
-
-              <Flag className="mx-2" />
               {name}
             </option>
           ))}

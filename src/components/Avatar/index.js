@@ -5,12 +5,12 @@ import { useNavigate } from 'react-router-dom';
 import { db } from '../../firebase';
 import { doc, getDoc } from 'firebase/firestore';
 import { useTranslation } from 'react-i18next';
+
 const Index = ({ width, height, margin, isOpenNav }) => {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
-
   const { user, logOut } = UserAuth();
-  const [profilePic, setProfileUrl] = useState('');
+  const [profilePic, setProfileUrl] = useState(null);
   const navigate = useNavigate();
   const isClickProfile = () => {
     setIsOpen(!isOpen);
@@ -32,16 +32,28 @@ const Index = ({ width, height, margin, isOpenNav }) => {
     };
     getUserAsyncFv();
   }, [user]);
+
   return (
     <Fragment>
-      <div class=" " style={{ cursor: 'pointer' }}>
-        <img
-          class="w-10 h-10 rounded-full profile_picture"
-          src={`${profilePic}`}
-          alt=""
-          style={{ width, height, margin }}
-          onClick={() => isClickProfile()}
-        />
+      <div className=" " style={{ cursor: 'pointer' }}>
+        {profilePic ? (
+          <img
+            className="w-10 h-10 rounded-full profile_picture"
+            src={`${profilePic}`}
+            alt=""
+            style={{ width, height, margin }}
+            onClick={() => isClickProfile()}
+          />
+        ) : (
+          <img
+            className="w-10 h-10 rounded-full profile_picture"
+            src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/271deea8-e28c-41a3-aaf5-2913f5f48be6/de7834s-6515bd40-8b2c-4dc6-a843-5ac1a95a8b55.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzI3MWRlZWE4LWUyOGMtNDFhMy1hYWY1LTI5MTNmNWY0OGJlNlwvZGU3ODM0cy02NTE1YmQ0MC04YjJjLTRkYzYtYTg0My01YWMxYTk1YThiNTUuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.BopkDn1ptIwbmcKHdAOlYHyAOOACXW0Zfgbs0-6BY-E"
+            alt=""
+            style={{ width, height, margin }}
+            onClick={() => isClickProfile()}
+          />
+        )}
+
         {/* <span class="bottom-0 left-7 absolute  w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span> */}
       </div>
       {isOpen & isOpenNav ? (
@@ -52,7 +64,7 @@ const Index = ({ width, height, margin, isOpenNav }) => {
           xTransitionLeave="transition ease-in duration-75"
           xTransitionLeave-start="transform opacity-100 scale-600"
           xTransitionLeave-end="transform opacity-0 scale-95"
-          className="absolute top-20   w-40 py-6 dark:bg-gray-800 bg-white rounded-lg shadow border dark:border-transparent mt-5"
+          className="absolute top-20 bg-white w-40 py-6 rounded-lg shadow-lg border z-50 mt-5"
         >
           <ul className="space-y-3 dark:text-white">
             <li className="font-medium">

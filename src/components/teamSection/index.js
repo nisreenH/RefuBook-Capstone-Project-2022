@@ -33,7 +33,7 @@ const TeamSection = () => {
                   <div key={index}>
                     <ul>
                       <li>
-                        <h4 className="font-bold text-blue-800 flex items-start">
+                        <h4 className="font-bold capitalize text-blue-800 flex items-start">
                           {t(member.name)}
                         </h4>
                         <p className="text-blue-800 flex items-start">
@@ -54,7 +54,7 @@ const TeamSection = () => {
                   <div key={index}>
                     <ul>
                       <li>
-                        <h4 className="font-bold text-blue-800 flex items-start">
+                        <h4 className="font-bold capitalize text-blue-800 flex items-start">
                           {t(member.name)}
                         </h4>
                         <p className="text-blue-800 flex items-start">
@@ -75,7 +75,7 @@ const TeamSection = () => {
                   <div key={index}>
                     <ul>
                       <li>
-                        <h4 className="font-bold text-blue-800 flex items-start">
+                        <h4 className="font-bold capitalize text-blue-800 flex items-start">
                           {t(member.name)}
                         </h4>
                         <p className="text-blue-800 flex items-start">
@@ -96,7 +96,7 @@ const TeamSection = () => {
                   <div key={index}>
                     <ul>
                       <li>
-                        <h4 className="font-bold text-blue-800 flex items-start">
+                        <h4 className="font-bold capitalize text-blue-800 flex items-start">
                           {t(member.name)}
                         </h4>
                         <p className="text-blue-800 flex items-start">
