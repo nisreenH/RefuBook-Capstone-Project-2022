@@ -62,8 +62,16 @@ export default function SingleBlog() {
 
         {blogs && keys.length > 0 ? (
           <div className="flex flex-col ">
-            <Card props={blogs[randomKey1]} blogId={randomKey1} />
-            <Card props={blogs[randomKey2]} blogId={randomKey2} />
+            <Card
+              props={blogs[randomKey1]}
+              blogId={randomKey1}
+              key={randomKey1}
+            />
+            <Card
+              props={blogs[randomKey2]}
+              blogId={randomKey2}
+              key={randomKey2}
+            />
           </div>
         ) : (
           <Spinner />

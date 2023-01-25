@@ -29,12 +29,11 @@ export default function Card({ props, blogId }) {
 
     return unsubscribe;
   }, []);
-  console.log(users);
   function handleRedirection() {
     navigate(`/SingleBlog/${blogId}`);
   }
   return (
-    <div class="carouselCard border hover:-translate-y-2 transition-translate duration-500 cursor-pointer w-96 mx-6 rounded-lg h-5/6  shadow-md hover:shadow-xl">
+    <div className="carouselCard border hover:-translate-y-2 transition-translate duration-500 cursor-pointer w-96 mx-6 rounded-lg h-5/6  shadow-md hover:shadow-xl">
       {props.blogImgUrl ? (
         <div className="w-full h-1/2">
           <img
@@ -61,7 +60,10 @@ export default function Card({ props, blogId }) {
           {users
             ? users.map((key) =>
                 key.userId === props.userId ? (
-                  <div className="flex gap-2 items-center mb-20 ">
+                  <div
+                    key={key.blogId}
+                    className="flex gap-2 items-center mb-20 "
+                  >
                     <div className="rounded-full h-16 w-16 overflow-hidden">
                       {key.profilePic ? (
                         <img

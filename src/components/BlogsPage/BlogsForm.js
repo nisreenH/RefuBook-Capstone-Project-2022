@@ -64,18 +64,18 @@ export default function BlogsForm(props) {
                 {/*body*/}
                 <div className="relative p-6 flex-auto">
                   <form onSubmit={addingData}>
-                    <div class="grid gap-6 mb-6 md:grid-cols-2">
+                    <div className="grid gap-6 mb-6 md:grid-cols-2">
                       <div>
                         <label
                           for="title"
-                          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left"
+                          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-left"
                         >
                           Title
                         </label>
                         <input
                           type="text"
                           id="title"
-                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                           placeholder="React js ..."
                           required
                           onChange={(e) => setTitle(e.target.value)}
@@ -84,14 +84,14 @@ export default function BlogsForm(props) {
                       <div>
                         <label
                           for="title"
-                          class="block mb-2 text-sm font-medium text-gray-900  text-left"
+                          className="block mb-2 text-sm font-medium text-gray-900  text-left"
                         >
                           Sub Title
                         </label>
                         <input
                           type="text"
                           id="subTitle"
-                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                           placeholder="Top React js Hooks"
                           required
                           onChange={(e) => setSubTitle(e.target.value)}
@@ -100,14 +100,14 @@ export default function BlogsForm(props) {
                       <div>
                         <label
                           for="image"
-                          class="block mb-2 text-sm font-medium text-gray-900  text-left"
+                          className="block mb-2 text-sm font-medium text-gray-900  text-left"
                         >
                           Image Url
                         </label>
                         <input
                           type="text"
                           id="image"
-                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                           placeholder="www.image.com/path"
                           required
                           onChange={(e) => setBlogImg(e.target.value)}
@@ -116,7 +116,7 @@ export default function BlogsForm(props) {
                       <div>
                         <label
                           for="categorie"
-                          class="block mb-2 text-sm font-medium text-gray-900  text-left"
+                          className="block mb-2 text-sm font-medium text-gray-900  text-left"
                         >
                           Categories
                         </label>
@@ -151,14 +151,14 @@ export default function BlogsForm(props) {
                         <div className=" w-full">
                           <label
                             for="blog"
-                            class="block mb-2 text-sm text-left font-medium text-gray-900 "
+                            className="block mb-2 text-sm text-left font-medium text-gray-900 "
                           >
                             Blog Body
                           </label>
                           <textarea
                             id="blog"
                             rows="4"
-                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 "
+                            className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 "
                             placeholder="Write your thoughts here..."
                             onChange={(e) => setBlogBody(e.target.value)}
                           ></textarea>
