@@ -20,13 +20,13 @@ export default function SingleBlogCard({ blogId, props }) {
   }, [props.userId]);
 
   return (
-    <div className=" max-w-7xl h-auto flex flex-col flex-wrap items-center justify-center">
-      <div className="w-4/6">
-        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
+    <div className="mt-20 w-auto h-auto flex flex-col flex-wrap items-center justify-center">
+      <div className="w-auto">
+        <h5 className="mb-10 text-2xl font-bold tracking-tight text-gray-900 ">
           {props.BlogTitle}
         </h5>
         {/* <div className='relative'> */}
-        <div className=" flex flex-col pt-8 pr-2 gap-2 absolute">
+        <div className=" flex items-center justify-center flex-col pt-8 pr-2 gap-2 absolute">
           <a href="socialMediaLink">
             <svg
               width="24"
@@ -98,20 +98,22 @@ export default function SingleBlogCard({ blogId, props }) {
         />
         {/* </div> */}
       </div>
-      <div className="inline-flex mt-4 gap-6 items-center justify-center px-3 py-2 text-sm font-medium  w-full ">
-        by:
+      <div className="inline-flex mt-4 mb-3 font-bold gap-6 items-center justify-center px-3 py-2 text-lg w-full ">
+        <span>by:</span>
         <div className="rounded-full h-16 w-16 overflow-hidden">
           <img src={users.profilePic} alt="pic" />
         </div>
-        <p className="m-0 pb-2 text-blue-500">{users.userName}</p>
+        <p className="m-0  text-blue-500">{users.userName}</p>
       </div>
 
-      <div className="w-4/6 text-left">
-        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
+      <div className="w-auto  text-left ">
+        <h5 className=" text-xl md:mb-20 font-bold tracking-tight md:text-2xl text-gray-900">
           {props.subTitle}
         </h5>
         <div className=" ">
-          <p className=" mb-3 font-normal text-gray-700 ">{props.blogBody}</p>
+          <p className=" mb-3 font-normal md:text-xl text-gray-700 ">
+            {props.blogBody}
+          </p>
         </div>
       </div>
     </div>

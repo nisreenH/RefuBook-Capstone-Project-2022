@@ -167,6 +167,8 @@ export default function Blogs() {
       </div>
     </div>
   ) : (
-    <Spinner />
+    <div className="h-screen w-auto">
+      <Spinner />
+    </div>
   );
 }

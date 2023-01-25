@@ -50,25 +50,24 @@ export default function SingleBlog() {
   const randomKey2 = keys[randomIndex2];
 
   return (
-    <div className="md:flex justify-center gap-x-4">
+    <div className="flex flex-col md:flex-row gap-10 p-10">
       <div>
         {Object.keys(singleBlog).map((key) => (
           <SingleBlogCard props={singleBlog[key]} key={key} blogId={key} />
         ))}
       </div>
 
-      <div className="gap-y-5 ml-10">
-        <p className="text-left">Read also: </p>
-        <div className="flex md:flex-col gap-y-5 mr-20 ">
-          {blogs && keys.length > 0 ? (
-            <React.Fragment>
-              <Card props={blogs[randomKey1]} blogId={randomKey1} />
-              <Card props={blogs[randomKey2]} blogId={randomKey2} />
-            </React.Fragment>
-          ) : (
-            <Spinner />
-          )}
-        </div>
+      <div className="w-auto flex flex-col items-start pt-20">
+        <p className="text-left text-lg font-bold">Read also: </p>
+
+        {blogs && keys.length > 0 ? (
+          <div className="flex flex-col ">
+            <Card props={blogs[randomKey1]} blogId={randomKey1} />
+            <Card props={blogs[randomKey2]} blogId={randomKey2} />
+          </div>
+        ) : (
+          <Spinner />
+        )}
       </div>
     </div>
   );

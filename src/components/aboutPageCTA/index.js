@@ -17,7 +17,7 @@ const AboutPageCTA = () => {
         </p>
 
         {!user ? (
-          <button className="justify-center drop-shadow-2xl text-whity mx-auto appearance-none no-underline bg-blue-700 hover:bg-blue-400 text-whity font-bold py-2 px-8 text-center rounded-full transition duration-500 ease-in-out hover:scale-110 transform">
+          <button className="justify-center drop-shadow-2xl text-whity mx-auto appearance-none no-underline bg-blue-700 hover:bg-blue-400 font-bold py-2 px-8 text-center rounded-full transition duration-500 ease-in-out hover:scale-110 transform">
             <Link className="no-underline drop-shadow-2xl " to="/signup">
               {t('about.aboutPageCTA.SignUp')}
             </Link>
