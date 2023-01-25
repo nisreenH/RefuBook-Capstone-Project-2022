@@ -9,23 +9,12 @@ import { useNavigate } from 'react-router-dom';
 import { db } from '../../firebase';
 import { collection, onSnapshot } from 'firebase/firestore';
 import Spinner from '../spinner/Spinner';
+import './carousel.css';
 
 export default function Blogs() {
   const navigate = useNavigate();
 
   const [blogs, setBlogs] = useState(null);
-  // useEffect(() => {
-  //   async function fetchBlogs() {
-  //     const querySnapshot = await getDocs(collection(db, 'blogs'));
-  //     querySnapshot.forEach((doc) => {
-  //       setBlogs((prevState) => ({
-  //         ...prevState,
-  //         [doc.id]: doc.data(),
-  //       }));
-  //     });
-  //   }
-  //   fetchBlogs();
-  // }, []);
   useEffect(() => {
     const unsubscribe = onSnapshot(collection(db, 'blogs'), (snapshot) => {
       setBlogs(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
@@ -42,8 +31,8 @@ export default function Blogs() {
   const breakPoints = [
     { width: 1, itemsToShow: 1 },
     { width: 550, itemsToShow: 2 },
-    { width: 760, itemsToShow: 3 },
-    { width: 1200, itemsToShow: 4 },
+    { width: 760, itemsToShow: 2 },
+    { width: 1200, itemsToShow: 3 },
   ];
   const categories = [
     { name: 'Food blogs' },
@@ -70,19 +59,25 @@ export default function Blogs() {
       className=" w-auto px-6
     md:px-12 relative"
     >
-      <Carousel
-        showArrows={false}
-        breakPoints={breakPoints}
-        className="w-full text-left p-6 flex items-center justify-center mb-20"
-        autoPlay={true}
-        infiniteLoop={true}
-      >
-        {blogs
-          ? blogs.map((ele) => (
-              <Card blogId={ele.id} props={ele} key={ele.id} />
-            ))
-          : console.log('none')}
-      </Carousel>
+      <div className="h-auto">
+        <Carousel
+          showArrows={false}
+          breakPoints={breakPoints}
+          enableAutoPlay
+          autoPlaySpeed={3000}
+          className="mb-20"
+          easing="cubic-bezier(1,.15,.55,1.54)"
+          tiltEasing="cubic-bezier(0.110, 1, 1.000, 0.210)"
+          transitionMs={700}
+          infiniteLoop={true}
+        >
+          {blogs
+            ? blogs.map((ele) => (
+                <Card blogId={ele.id} props={ele} key={ele.id} />
+              ))
+            : console.log('none')}
+        </Carousel>
+      </div>
 
       {/* adminstration bar */}
 
@@ -159,7 +154,7 @@ export default function Blogs() {
       </div>
 
       <BlogsForm trigger={showModal} setTrigger={setShowModal} />
-      <div className="mb-10 text-left md:px-16 grid grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 gap-4 content-center">
+      <div className="mb-10 text-left px-10 py-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 content-center w-auto items-center justify-center justify-items-center">
         {blogs
           ? !selected || selected === 'all'
             ? blogs.map((ele) => (
