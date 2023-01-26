@@ -1,0 +1,256 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TeamSection renders correctly 1`] = `
+<div>
+  <div
+    class="bg-blue-100 text-center py-4 xl:py-8"
+  >
+    <h2
+      class="text-blue-800 text-5xl py-8"
+    >
+      Our Team
+    </h2>
+    <div
+      class="react-tabs"
+      data-rttabs="true"
+    >
+      <ul
+        class="mb-16 md:mb-32 flex justify-center"
+        role="tablist"
+      >
+        <li
+          aria-controls="panel:r0:0"
+          aria-disabled="false"
+          aria-selected="true"
+          class="cursor-pointer text-sm md:text-base mr-2 md:mr-8 rounded-full py-1 px-4 font-medium transition duration-500 ease-in-out text-white bg-blue-800 "
+          data-rttab="true"
+          id="tab:r0:0"
+          role="tab"
+          tabindex="0"
+        >
+          View All
+        </li>
+        <li
+          aria-controls="panel:r0:1"
+          aria-disabled="false"
+          aria-selected="false"
+          class="cursor-pointer text-sm md:text-base mr-2 md:mr-8 rounded-full py-1 px-4 font-medium"
+          data-rttab="true"
+          id="tab:r0:1"
+          role="tab"
+        >
+          Support Team
+        </li>
+        <li
+          aria-controls="panel:r0:2"
+          aria-disabled="false"
+          aria-selected="false"
+          class="cursor-pointer text-sm md:text-base mr-2 md:mr-8 rounded-full py-1 px-4 font-medium"
+          data-rttab="true"
+          id="tab:r0:2"
+          role="tab"
+        >
+          Iraq
+        </li>
+        <li
+          aria-controls="panel:r0:3"
+          aria-disabled="false"
+          aria-selected="false"
+          class="cursor-pointer text-sm md:text-base mr-2 md:mr-8 rounded-full py-1 px-4 font-medium"
+          data-rttab="true"
+          id="tab:r0:3"
+          role="tab"
+        >
+          Lebanon
+        </li>
+      </ul>
+      <div
+        aria-labelledby="tab:r0:0"
+        class="px-4 md:px-48 text-left grid grid-cols-2 gap-16 md:grid-cols-3 md:gap-32 react-tabs__tab-panel--selected"
+        id="panel:r0:0"
+        role="tabpanel"
+      >
+        <div>
+          <ul>
+            <li>
+              <h4
+                class="font-bold capitalize text-blue-800 flex items-start"
+              >
+                Derya Güçdemir
+              </h4>
+              <p
+                class="text-blue-800 flex items-start"
+              >
+                Program Officer
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li>
+              <h4
+                class="font-bold capitalize text-blue-800 flex items-start"
+              >
+                Ammar Sammour
+              </h4>
+              <p
+                class="text-blue-800 flex items-start"
+              >
+                Senior Trainer
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li>
+              <h4
+                class="font-bold capitalize text-blue-800 flex items-start"
+              >
+                Wisam Naji
+              </h4>
+              <p
+                class="text-blue-800 flex items-start"
+              >
+                Lead Trainer
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li>
+              <h4
+                class="font-bold capitalize text-blue-800 flex items-start"
+              >
+                Halit Batur
+              </h4>
+              <p
+                class="text-blue-800 flex items-start"
+              >
+                Trainer
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li>
+              <h4
+                class="font-bold capitalize text-blue-800 flex items-start"
+              >
+                 Muslim Omar
+              </h4>
+              <p
+                class="text-blue-800 flex items-start"
+              >
+                Trainer Assistant 
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li>
+              <h4
+                class="font-bold capitalize text-blue-800 flex items-start"
+              >
+                Mustafa M. Younus
+              </h4>
+              <p
+                class="text-blue-800 flex items-start"
+              >
+                 Team Member
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li>
+              <h4
+                class="font-bold capitalize text-blue-800 flex items-start"
+              >
+                Nisreen Hamzah
+              </h4>
+              <p
+                class="text-blue-800 flex items-start"
+              >
+                 Team Member
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li>
+              <h4
+                class="font-bold capitalize text-blue-800 flex items-start"
+              >
+                Ali majed
+              </h4>
+              <p
+                class="text-blue-800 flex items-start"
+              >
+                 Team Member
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li>
+              <h4
+                class="font-bold capitalize text-blue-800 flex items-start"
+              >
+                Mahnaz Nazeer
+              </h4>
+              <p
+                class="text-blue-800 flex items-start"
+              >
+                 Team Member
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li>
+              <h4
+                class="font-bold capitalize text-blue-800 flex items-start"
+              >
+                Yahia Hasan Baiz
+              </h4>
+              <p
+                class="text-blue-800 flex items-start"
+              >
+                 Team Member
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        aria-labelledby="tab:r0:1"
+        class="px-4 md:px-48 text-left grid grid-cols-2 gap-16 md:grid-cols-3 md:gap-32 "
+        id="panel:r0:1"
+        role="tabpanel"
+      />
+      <div
+        aria-labelledby="tab:r0:2"
+        class="px-4 md:px-48 text-left grid grid-cols-2 gap-16 md:grid-cols-3 md:gap-32"
+        id="panel:r0:2"
+        role="tabpanel"
+      />
+      <div
+        aria-labelledby="tab:r0:3"
+        class="px-4 md:px-48 text-left grid grid-cols-2 gap-16 md:grid-cols-3 md:gap-32"
+        id="panel:r0:3"
+        role="tabpanel"
+      />
+    </div>
+    <button />
+  </div>
+</div>
+`;
