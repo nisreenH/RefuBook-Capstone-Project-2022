@@ -1,5 +1,5 @@
 import React from 'react';
-import cover from '../../assets/team.webp';
+import cover from '../../assets/team.jpg';
 
 const style = {
   coverPhoto: {
