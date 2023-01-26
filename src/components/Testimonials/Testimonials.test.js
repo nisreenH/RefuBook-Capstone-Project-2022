@@ -1,5 +1,5 @@
 import React from 'react';
-import {screen, render } from '@testing-library/react';
+import { screen, render } from '@testing-library/react';
 import Testimonials from './Testimonials';
 
 test('Displays correct text from translation library', () => {
