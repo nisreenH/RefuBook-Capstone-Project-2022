@@ -1,9 +1,12 @@
 # Capstone Project
 
+https://curious-bublanina-360469.netlify.app/
+
 ## team members
 
 - mustafa \* mehnaz
 - nisreen \* yahia
+- Ali
 
 You'll be building this project with your peers. You'll be able to read more about the project you will build on your Canvas.
 
